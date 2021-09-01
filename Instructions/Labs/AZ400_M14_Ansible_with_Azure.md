@@ -83,44 +83,54 @@ In this task, you will deploy an Azure VM by using Azure CLI and configure it as
 
     >**Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Create storage**. 
 
-1.  From the Bash session in the Cloud Shell pane, run the following to specify the name of the Azure region that will host the resources you deploy in this lab (replace the `<Azure_region>` placeholder with the name of the Azure region where you intend to deploy resources. Make sure that the name does not contain any spaces, e.g. `westeurope`):
+1. From the Bash session in the Cloud Shell pane, run the following to specify the name of the Azure region that will host the resources you deploy in this lab (replace the `<Azure_region>` placeholder with the name of the Azure region where you intend to deploy resources. Make sure that the name does not contain any spaces, e.g. `westeurope`):
 
-    ```bash
-    LOCATION=<Azure_region>
-    ```
+   ```bash
+   LOCATION=<Azure_region>
+   ```
 
-1.  From the Bash session in the Cloud Shell pane, run the following to create resource groups that will host the Azure VMs you deploy in this lab:
+   ![01-02](../../Evidencias/mod14a/MOD14_LABa_EXER1_TASK_01_03.png)
 
-    ```bash
-    RG1NAME=az400m14l03rg
-    az group create --name $RG1NAME --location $LOCATION
-    RG2NAME=az400m14l03arg
-    az group create --name $RG2NAME --location $LOCATION
-    ```
+1. From the Bash session in the Cloud Shell pane, run the following to create resource groups that will host the Azure VMs you deploy in this lab:
 
-1.  Run the following to deploy an Azure VM running Ubuntu into the resource group you created in the previous step:
+   ```bash
+   RG1NAME=az400m14l03rg
+   az group create --name $RG1NAME --location $LOCATION
+   RG2NAME=az400m14l03arg
+   az group create --name $RG2NAME --location $LOCATION
+   ```
 
-    ```bash
-    VM1NAME=az400m1403vm1
-    az vm create \
-    --resource-group $RG1NAME \
-    --name $VM1NAME \
-    --image UbuntuLTS \
-    --authentication-type password \
-    --admin-username azureuser \
-    --admin-password Pa55w.rd1234
-    ```
+   ![01-02](../../Evidencias/mod14a/MOD14_LABa_EXER1_TASK_01_04.png)
 
-    >**Note**: Wait for the deployment to complete before you proceed to the next step. This might take about 2 minutes.
+1. Run the following to deploy an Azure VM running Ubuntu into the resource group you created in the previous step:
 
-    >**Note**: Once the provisioning completes, in the JSON-based output, identify the value of the **"publicIpAddress"** property included in the output. 
+   ```bash
+   VM1NAME=az400m1403vm1
+   az vm create \
+   --resource-group $RG1NAME \
+   --name $VM1NAME \
+   --image UbuntuLTS \
+   --authentication-type password \
+   --admin-username azureuser \
+   --admin-password Pa55w.rd1234
+   ```
 
-1.  Run the following to connect to the newly deployed Azure VM by using SSH:
+   >**Note**: Wait for the deployment to complete before you proceed to the next step. This might take about 2 minutes.
 
-    ```bash
-    PIP=$(az vm show --show-details --resource-group $RG1NAME --name $VM1NAME --query publicIps --output tsv)
-    ssh azureuser@$PIP
-    ```
+   >**Note**: Once the provisioning completes, in the JSON-based output, identify the value of the **"publicIpAddress"** property included in the output. 
+
+   ![01-02](../../Evidencias/mod14a/MOD14_LABa_EXER1_TASK_01_05.png)
+
+1. Run the following to connect to the newly deployed Azure VM by using SSH:
+
+   ```bash
+   PIP=$(az vm show --show-details --resource-group $RG1NAME --name $VM1NAME --query publicIps --output tsv)
+   ssh azureuser@$PIP
+   ```
+
+   ![01-02](../../Evidencias/mod14a/MOD14_LABa_EXER1_TASK_01_06.png)
+
+   
 
 1.  When prompted for confirmation to proceed, type **yes** and press the **Enter** key and, when prompted to provide the password, type **Pa55w.rd1234**.
 
@@ -135,21 +145,23 @@ In this task, you will install and configure Ansible on the Azure VM you deploye
     sudo apt-get update
     ```
 
-1.  Run the following to install Ansible and the required Azure modules (**make sure that you run the commands individually, line by line**, and, whenever you are prompted for confirmation, type **y** and press the **Enter** key):
+1. Run the following to install Ansible and the required Azure modules (**make sure that you run the commands individually, line by line**, and, whenever you are prompted for confirmation, type **y** and press the **Enter** key):
 
-    ```bash
-    sudo apt install python3-pip
-    sudo -H pip3 install --upgrade pip
-    sudo -H pip3 install ansible[azure]
-    sudo apt-add-repository --yes --update ppa:ansible/ansible
-    sudo apt install ansible
-    sudo ansible-galaxy collection install azure.azcollection
-    curl -O https://raw.githubusercontent.com/ansible-collections/azure/dev/requirements-azure.txt
-    sudo pip3 install -r requirements-azure.txt
-    rm requirements-azure.txt
-    ```
+   ```bash
+   sudo apt install python3-pip
+   sudo -H pip3 install --upgrade pip
+   sudo -H pip3 install ansible[azure]
+   sudo apt-add-repository --yes --update ppa:ansible/ansible
+   sudo apt install ansible
+   sudo ansible-galaxy collection install azure.azcollection
+   curl -O https://raw.githubusercontent.com/ansible-collections/azure/dev/requirements-azure.txt
+   sudo pip3 install -r requirements-azure.txt
+   rm requirements-azure.txt
+   ```
 
-    >**Note**: Disregard any warnings. If you encounter any errors, rerun the commands.
+   >**Note**: Disregard any warnings. If you encounter any errors, rerun the commands.
+
+   ![01-02](../../Evidencias/mod14a/MOD14_LABa_EXER1_TASK_02_02.png)
 
 1.  Run the following to install the dnspython package to allow the Ansible playbooks to verify DNS names before deployment:
 
@@ -187,6 +199,7 @@ In this task, you will download from GitHub the Ansible configuration repository
 
     >**Note**: This repository contains playbooks for creating a wide range of resources, some of which we will use in the lab.
 
+![01-02](../../Evidencias/mod14a/MOD14_LABa_EXER1_TASK_03_02.png)
 
 #### Task 4: Create and configure Azure Active Directory managed identity
 
@@ -213,28 +226,32 @@ In this task, you will generate an Azure AD managed identity in order to facilit
     az vm identity assign --resource-group $RG1NAME --name $VM1NAME
     ```
 
-1.  Run the following to identify the value of your subscription by running:
+![01-02](../../Evidencias/mod14a/MOD14_LABa_EXER1_TASK_04_04.png)
 
-    ```bash
-    SUBSCRIPTIONID=$(az account show --query id --output tsv)
-    ```
+5. Run the following to identify the value of your subscription by running:
 
-1.  Run the following to retrieve the value of the **ID** property of the built-in Azure Role Based Access Control Contributor role: 
+```bash
+SUBSCRIPTIONID=$(az account show --query id --output tsv)
+```
 
-    ```bash
-    CONTRIBUTORID=$(az role definition list --name "Contributor" --query "[].id" --output tsv)
-    ```
+6. Run the following to retrieve the value of the **ID** property of the built-in Azure Role Based Access Control Contributor role: 
 
-1.  Run the following to assign the Contributor role on the resource group you created earlier in this lab: 
+```bash
+CONTRIBUTORID=$(az role definition list --name "Contributor" --query "[].id" --output tsv)
+```
 
-    ```bash
-    MIID=$(az resource list --name $VM1NAME --query [*].identity.principalId --out tsv)
+7. Run the following to assign the Contributor role on the resource group you created earlier in this lab: 
 
-    RG2NAME=az400m14l03arg
-    az role assignment create --assignee "$MIID" \
-    --role "$CONTRIBUTORID" \
-    --scope /subscriptions/$SUBSCRIPTIONID/resourceGroups/$RG2NAME
-    ```
+```bash
+MIID=$(az resource list --name $VM1NAME --query [*].identity.principalId --out tsv)
+
+RG2NAME=az400m14l03arg
+az role assignment create --assignee "$MIID" \
+--role "$CONTRIBUTORID" \
+--scope /subscriptions/$SUBSCRIPTIONID/resourceGroups/$RG2NAME
+```
+
+![01-02](../../Evidencias/mod14a/MOD14_LABa_EXER1_TASK_04_07.png)
 
 #### Task 5: Configure SSH for use with Ansible
 
@@ -252,14 +269,16 @@ In this task, you will configure SSH for use with Ansible.
     chmod 755 ~/.ssh
     ```
 
-1.  Run the following to create as well as set read and write permissions on the **authorized_keys** file.
+1. Run the following to create as well as set read and write permissions on the **authorized_keys** file.
 
-    ```bash
-    touch ~/.ssh/authorized_keys
-    chmod 644 ~/.ssh/authorized_keys
-    ```
+   ```bash
+   touch ~/.ssh/authorized_keys
+   chmod 644 ~/.ssh/authorized_keys
+   ```
 
-    >**Note**: By providing keys included in this file, you are allowed access without having to provide a password.
+   >**Note**: By providing keys included in this file, you are allowed access without having to provide a password.
+
+   ![01-02](../../Evidencias/mod14a/MOD14_LABa_EXER1_TASK_05_03.png)
 
 1.  Run the following to add the password to the **authorized_keys** file:
 
@@ -268,16 +287,20 @@ In this task, you will configure SSH for use with Ansible.
     ```
 
 1. When prompted, type **yes** and enter the password **Pa55w.rd1234** for the **azureuser** user account you specified when deploying the third Azure VM earlier in this lab. 
-1.  Run the following to verify that you are not prompted for password:
 
-    ```bash
-    ssh 127.0.0.1
-    ```
+1. Run the following to verify that you are not prompted for password:
+
+   ```bash
+   ssh 127.0.0.1
+   ```
+
+   ![01-02](../../Evidencias/mod14a/MOD14_LABa_EXER1_TASK_05_06.png)
 
 1.  Type **exit** and press the **Enter** key to terminate the loopback connection you just established. 
 
->**Note**: Establishing passwordless SSH authentication is a critical step for setting up your Ansible environment. 
+>**Note**: Establishing passwordless SSH authentication is a critical step for setting up your Ansible environment.  https://www.tecmint.com/ssh-passwordless-login-using-ssh-keygen-in-5-easy-steps/
 
+![01-02](../../Evidencias/mod14a/MOD14_LABa_EXER1_TASK_05_07.png)
 
 #### Task 6: Create a web server Azure VM by using an Ansible playbook
 
@@ -291,71 +314,85 @@ In this task, you will create an Azure VM hosting a web server by using an Ansib
     cat ~/.ssh/id_rsa.pub
     ```
 
-1.  Record the output, including the username at the end of the output string. 
-1.  Run the following to open the **new_vm_web.yml** file in the Nano text editor:
+1. Record the output, including the username at the end of the output string. 
 
-    ```bash
-    nano ~/PartsUnlimitedMRP/Labfiles/AZ-400T05-ImplemntgAppInfra/Labfiles/ansible/new_vm_web.yml
-    ```
+1. Run the following to open the **new_vm_web.yml** file in the Nano text editor:
+
+   ```bash
+   nano ~/PartsUnlimitedMRP/Labfiles/AZ-400T05-ImplemntgAppInfra/Labfiles/ansible/new_vm_web.yml
+   ```
+
+   ![01-02](../../Evidencias/mod14a/MOD14_LABa_EXER1_TASK_06_03.png)
 
 1.  In the nano editor, if needed, change the name of the region in the `dnsname: '{{ vmname }}.westeurope.cloudapp.azure.com'` entry to the name of the Azure region you are targeting for deployment. 
 
     >**Note**: Make sure that this region matches the Azure region where you created the **az400m14l03rg** resource group.
 
-1.  In the nano editor, change the value of `vm_size` entry from `Standard_A0` to `Standard_DS1_v2`.
-1.  In the nano editor, locate the SSH string towards the end of the file, in the `key_data` entry, delete the existing key value and replace it with the key value that you recorded earlier in this task. 
+1. In the nano editor, change the value of `vm_size` entry from `Standard_A0` to `Standard_DS1_v2`.
 
-    >**Note**: Make sure that the value of `admin_username` entry that is included in the file matches the user name you used to sign in to the Azure VM hosting the Ansible control system (**azureuser**). The same user name must be used in the `path` entry of `ssh_public_keys` section.
+1. In the nano editor, locate the SSH string towards the end of the file, in the `key_data` entry, delete the existing key value and replace it with the key value that you recorded earlier in this task. 
 
-1.  Within the Nano editor interface, press **ctrl + o** key combination, press the **Enter** key, and then press **ctrl + x** key combination to save the changes you made and close the file.
+   >**Note**: Make sure that the value of `admin_username` entry that is included in the file matches the user name you used to sign in to the Azure VM hosting the Ansible control system (**azureuser**). The same user name must be used in the `path` entry of `ssh_public_keys` section.
 
-    >**Note**: Next, you will deploy an Azure VM into the resource group created at the beginning of the lab. Use the following values for the deployment: 
+   ![01-02](../../Evidencias/mod14a/MOD14_LABa_EXER1_TASK_06_06.png)
 
-    | Setting | Value |
-    | --- | --- |
-    | Resource group | **az400m14l03arg** |
-    | Virtual network | **az400m1403aVNET** |
-    | Subnet | **az400m1403aSubnet** |
+1. Within the Nano editor interface, press **ctrl + o** key combination, press the **Enter** key, and then press **ctrl + x** key combination to save the changes you made and close the file.
 
-    >**Note**: The variables can be defined inside of playbooks or can be entered at runtime when invoking the `ansible-playbook` command by including the `--extra-vars` option. As the VM name, use only up to 15 lower case letters and numbers (no hyphens, underscore signs or upper case letters) and ensure it is globally unique, since the same name is used to generate the storage account and the DNS name for the public IP address associated with the corresponding Azure VM. 
+   >**Note**: Next, you will deploy an Azure VM into the resource group created at the beginning of the lab. Use the following values for the deployment: 
 
-1.  Run the following to create the virtual network and its subnet into which you will deploy an Azure VM by using an ansible playbook:
+   | Setting | Value |
+   | --- | --- |
+   | Resource group | **az400m14l03arg** |
+   | Virtual network | **az400m1403aVNET** |
+   | Subnet | **az400m1403aSubnet** |
 
-    ```bash
-    RG1NAME=az400m14l03arg
-    LOCATION=$(az group show --resource-group $RG1NAME --query location --output tsv)
-    RG2NAME=az400m14l03arg
-    VNETNAME=az400m1403aVNET
-    SUBNETNAME=az400m1403aSubnet
-    az network vnet create \
-    --name $VNETNAME \
-    --resource-group $RG2NAME \
-    --location $LOCATION \
-    --address-prefixes 192.168.0.0/16 \
-    --subnet-name $SUBNETNAME \
-    --subnet-prefix 192.168.1.0/24
-    ```
+   >**Note**: The variables can be defined inside of playbooks or can be entered at runtime when invoking the `ansible-playbook` command by including the `--extra-vars` option. As the VM name, use only up to 15 lower case letters and numbers (no hyphens, underscore signs or upper case letters) and ensure it is globally unique, since the same name is used to generate the storage account and the DNS name for the public IP address associated with the corresponding Azure VM. 
 
-1.  Run the following to deploy the sample ansible playbook that provisions an Azure VM (**make sure to replace the `<VM_name>` with the unique VM name you chose**):
+   ![01-02](../../Evidencias/mod14a/MOD14_LABa_EXER1_TASK_06_07.png)
 
-    ```bash
-    sudo ansible-playbook ~/PartsUnlimitedMRP/Labfiles/AZ-400T05-ImplemntgAppInfra/Labfiles/ansible/new_vm_web.yml --extra-vars "vmname=<VM_name> resgrp=az400m14l03arg vnet=az400m1403aVNET subnet=az400m1403aSubnet"
-    ```
+1. Run the following to create the virtual network and its subnet into which you will deploy an Azure VM by using an ansible playbook:
 
-    >**Note**: Disregard deprecation warning regarding the setting ip_configuration.
+   ```bash
+   RG1NAME=az400m14l03arg
+   LOCATION=$(az group show --resource-group $RG1NAME --query location --output tsv)
+   RG2NAME=az400m14l03arg
+   VNETNAME=az400m1403aVNET
+   SUBNETNAME=az400m1403aSubnet
+   az network vnet create \
+   --name $VNETNAME \
+   --resource-group $RG2NAME \
+   --location $LOCATION \
+   --address-prefixes 192.168.0.0/16 \
+   --subnet-name $SUBNETNAME \
+   --subnet-prefix 192.168.1.0/24
+   ```
 
-    >**Note**: You might receive the following errors if you enter an existing or an invalid VM name:
+   ![01-02](../../Evidencias/mod14a/MOD14_LABa_EXER1_TASK_06_08.png)
 
-    - `fatal: [localhost]: FAILED! => {"changed": false, "failed": true, "msg": "The storage account named storageaccountname is already taken. - Reason.already_exists"}`. To resolve this, use another name for the Azure VM, since the one you used is not globally unique.
-    - `fatal: [localhost]: FAILED! => {"changed": false, "failed": true, "msg": "Error creating or updating your-vm-name - Azure Error: InvalidDomainNameLabel\nMessage: The domain name label for your VM is invalid. It must conform to the following regular expression: ^[a-z][a-z0-9-]{1,61}[a-z0-9]$.”}`. To resolve this issue, use another name for the Azure VM following the required naming convention. 
+1. Run the following to deploy the sample ansible playbook that provisions an Azure VM (**make sure to replace the `<VM_name>` with the unique VM name you chose**):
 
-    >**Note**: Wait for the deployment to complete. This might take about 3 minutes. 
+   ```bash
+   sudo ansible-playbook ~/PartsUnlimitedMRP/Labfiles/AZ-400T05-ImplemntgAppInfra/Labfiles/ansible/new_vm_web.yml --extra-vars "vmname=<VM_name> resgrp=az400m14l03arg vnet=az400m1403aVNET subnet=az400m1403aSubnet"
+   ```
 
-1.  Run the following to create a new file named **myazure_rm.yml** and open it in the Nano text editor:
+   >**Note**: Disregard deprecation warning regarding the setting ip_configuration.
 
-    ```bash
-    nano ./myazure_rm.yml
-    ```
+   >**Note**: You might receive the following errors if you enter an existing or an invalid VM name:
+
+   - `fatal: [localhost]: FAILED! => {"changed": false, "failed": true, "msg": "The storage account named storageaccountname is already taken. - Reason.already_exists"}`. To resolve this, use another name for the Azure VM, since the one you used is not globally unique.
+   - `fatal: [localhost]: FAILED! => {"changed": false, "failed": true, "msg": "Error creating or updating your-vm-name - Azure Error: InvalidDomainNameLabel\nMessage: The domain name label for your VM is invalid. It must conform to the following regular expression: ^[a-z][a-z0-9-]{1,61}[a-z0-9]$.”}`. To resolve this issue, use another name for the Azure VM following the required naming convention. 
+
+   >**Note**: Wait for the deployment to complete. This might take about 3 minutes. 
+
+   ![01-02](../../Evidencias/mod14a/MOD14_LABa_EXER1_TASK_06_09.png)
+
+1. Run the following to create a new file named **myazure_rm.yml** and open it in the Nano text editor:
+
+   ```bash
+   nano ./myazure_rm.yml
+   ```
+
+   ![01-02](../../Evidencias/mod14a/MOD14_LABa_EXER1_TASK_06_10.png)
 
 1.  Within the Nano editor interface, paste the following content:
 
@@ -370,7 +407,8 @@ In this task, you will create an Azure VM hosting a web server by using an Ansib
       key: tags
     ```
 
-1.  Within the Nano editor interface, press **ctrl + o** key combination, press the **Enter** key, and then press **ctrl + x** key combination to save the changes you made and close the file.
+1. Within the Nano editor interface, press **ctrl + o** key combination, press the **Enter** key, and then press **ctrl + x** key combination to save the changes you made and close the file.
+
 1.  Back in the Bash session in the Cloud Shell pane, within the SSH session to the Azure VM configured as the Ansible control node, run the following to perform a ping test, verifying that the dynamic inventory file includes the newly deployed Azure VM:
 
     ```bash
@@ -393,6 +431,7 @@ In this task, you will create an Azure VM hosting a web server by using an Ansib
 
     >**Note**: The first time you run the command you will have to acknowledge the authenticity of the target VMs, by typing **yes** and pressing the **Enter** key. 
 
+![01-02](../../Evidencias/mod14a/MOD14_LABa_EXER1_TASK_06_14.png)
 
 #### Task 7: Configure an Azure VM by using an Ansible playbook
 
@@ -408,23 +447,27 @@ In this task, you will run another Ansible playbook, this time to configure the 
     PIP=$(az vm show --show-details --resource-group $RGNAME --name $VMNAME --query publicIps --output tsv)
     ```
 
-1.  Run the folowing to verify that the newly deployed Azure VM is currently not running any web service (where the `<IP_address>` placeholder represents the public IP address assigned to the network adapter of the Azure VM you provisioned in the previous task):
+1. Run the folowing to verify that the newly deployed Azure VM is currently not running any web service (where the `<IP_address>` placeholder represents the public IP address assigned to the network adapter of the Azure VM you provisioned in the previous task):
 
-    ```bash
-    curl http://$PIP
-    ```
+   ```bash
+   curl http://$PIP
+   ```
 
-    >**Note**: Verify that the response is in the format `curl: (7) Failed to connect to 52.186.157.26 port 80: Connection refused`.
+   >**Note**: Verify that the response is in the format `curl: (7) Failed to connect to 52.186.157.26 port 80: Connection refused`.
 
-1.  Run the following to install the HTTP service by using the Ansible playbook (where the `<VM_name>` placeholder represents the name of the VM you provisioned in the previous task): 
+   ![01-02](../../Evidencias/mod14a/MOD14_LABa_EXER1_TASK_07_02.png)
 
-    ```bash
-    sudo ansible-playbook --user azureuser --private-key=/home/azureuser/.ssh/id_rsa -i ./myazure_rm.yml ~/PartsUnlimitedMRP/Labfiles/AZ-400T05-ImplemntgAppInfra/Labfiles/ansible/httpd.yml --extra-vars "vmname=<VM_name>*"
-    ```
+1. Run the following to install the HTTP service by using the Ansible playbook (where the `<VM_name>` placeholder represents the name of the VM you provisioned in the previous task): 
 
-    >**Note**: Make sure to include the trailing asterisk (**\***) following the Azure VM name.
+   ```bash
+   sudo ansible-playbook --user azureuser --private-key=/home/azureuser/.ssh/id_rsa -i ./myazure_rm.yml ~/PartsUnlimitedMRP/Labfiles/AZ-400T05-ImplemntgAppInfra/Labfiles/ansible/httpd.yml --extra-vars "vmname=<VM_name>*"
+   ```
 
-    >**Note**: Wait for the installation to complete. This should take less than a minute. 
+   >**Note**: Make sure to include the trailing asterisk (**\***) following the Azure VM name.
+
+   >**Note**: Wait for the installation to complete. This should take less than a minute. 
+
+   ![01-02](../../Evidencias/mod14a/MOD14_LABa_EXER1_TASK_07_03.png)
 
 1.  Once the installation completes, run the following to verify that the newly deployed Azure VM is now running a web service (where the `<IP_address>` placeholder represents the public IP address assigned to the network adapter of the Azure VM you provisioned in the previous task):
 
@@ -452,6 +495,8 @@ In this task, you will run another Ansible playbook, this time to configure the 
      </html>
     ```
 
+![01-02](../../Evidencias/mod14a/MOD14_LABa_EXER1_TASK_07_04.png)
+
 ### Exercise 2: Remove the Azure lab resources
 
 In this exercise, you will remove the Azure resources provisioned in this lab to eliminate unexpected charges. 
@@ -476,6 +521,8 @@ In this task, you will use Azure Cloud Shell to remove the Azure resources provi
     ```
 
     >**Note**: The command executes asynchronously (as determined by the --nowait parameter), so while you will be able to run another Azure CLI command immediately afterwards within the same Bash session, it will take a few minutes before the resource groups are actually removed.
+
+![01-02](../../Evidencias/mod14a/MOD14_LABa_EXER1_TASK_08.png)
 
 ## Review
 

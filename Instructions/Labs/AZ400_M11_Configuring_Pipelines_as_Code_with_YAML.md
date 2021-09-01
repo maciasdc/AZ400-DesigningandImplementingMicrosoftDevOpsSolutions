@@ -59,10 +59,16 @@ In this task, you will use Azure DevOps Demo Generator to generate a new project
 
     > **Note**: For more information on the site, see https://docs.microsoft.com/en-us/azure/devops/demo-gen.
 
-1.  Click **Sign in** and sign in using the Microsoft account associated with your Azure DevOps subscription.
-1.  If required, on the **Azure DevOps Demo Generator** page, click **Accept** to accept the permission requests for accessing your Azure DevOps subscription.
-1.  On the **Create New Project** page, in the **New Project Name** textbox, type **Configuring Pipelines as Code with YAML**, in the **Select organization** dropdown list, select your Azure DevOps organization, and then click **Choose template**.
-1.  In the list of templates, in the toolbar, click **General**, select the **PartsUnlimited-YAML** template and click **Select Template**.
+1. Click **Sign in** and sign in using the Microsoft account associated with your Azure DevOps subscription.
+
+1. If required, on the **Azure DevOps Demo Generator** page, click **Accept** to accept the permission requests for accessing your Azure DevOps subscription.
+
+   ![01-02](../../Evidencias/mod11a/MOD10_LABb_EXER0_TASK_1_ 3.png)
+
+1. On the **Create New Project** page, in the **New Project Name** textbox, type **Configuring Pipelines as Code with YAML**, in the **Select organization** dropdown list, select your Azure DevOps organization, and then click **Choose template**.
+
+1. In the list of templates, in the toolbar, click **General**, select the **PartsUnlimited-YAML** template and click **Select Template**.
+
 1.  Back on the **Create New Project** page, click **Create Project**
 
     > **Note**: Wait for the process to complete. This should take about 2 minutes. In case the process fails, navigate to your DevOps organization, delete the project, and try again.
@@ -73,10 +79,16 @@ In this task, you will use Azure DevOps Demo Generator to generate a new project
 
 In this task, you will create an Azure web app and an Azure SQL database by using the Azure portal.
 
-1.  From the lab computer, start a web browser, navigate to the [**Azure Portal**](https://portal.azure.com), and sign in with the user account that has the Owner role in the Azure subscription you will be using in this lab and has the role of the Global Administrator in the Azure AD tenant associated with this subscription.
-1.  In the Azure portal, click the icon consisting of three horizontal lines in the upper left corner of the page and, in the hub menu and click **+ Create a resource**.
-1.  On the **New** blade, in the search text box, type **Web App + SQL** and press the **Enter** key.
-1.  On the **Web App + SQL**, click **Create**.
+1. From the lab computer, start a web browser, navigate to the [**Azure Portal**](https://portal.azure.com), and sign in with the user account that has the Owner role in the Azure subscription you will be using in this lab and has the role of the Global Administrator in the Azure AD tenant associated with this subscription.
+
+1. In the Azure portal, click the icon consisting of three horizontal lines in the upper left corner of the page and, in the hub menu and click **+ Create a resource**.
+
+1. On the **New** blade, in the search text box, type **Web App + SQL** and press the **Enter** key.
+
+1. On the **Web App + SQL**, click **Create**.
+
+1. ![01-02](../../Evidencias/mod11a/MOD10_LABb_EXER0_TASK_2_ 4.png)
+
 1.  On the **Web App + SQL** blade, specify the following settings:
 
     | Setting | Value |
@@ -85,7 +97,10 @@ In this task, you will create an Azure web app and an Azure SQL database by usin
     | Subscription | the name of the Azure subscription you are using in this lab |
     | Resource group | the name of a new resource group **az400m11l01-RG** |
 
-1.  Click **App Service plan/Location**, on the **App Service plan** blade, click **+ Create new**.
+1. Click **App Service plan/Location**, on the **App Service plan** blade, click **+ Create new**.
+
+1. ![01-02](../../Evidencias/mod11a/MOD10_LABb_EXER0_TASK_2_ 7.png)
+
 1.  On the **New App Service Plan** blade, specify the following settings and click **OK**:
 
     | Setting | Value |
@@ -94,9 +109,14 @@ In this task, you will create an Azure web app and an Azure SQL database by usin
     | Location| the name of the Azure region where you want to deploy resources you will be using in this lab |
     | Pricing tier | **D1 Shared** |
 
-1.  Back on the **Web App + SQL** blade, click **SQL Database**.
-1.  On the **SQL Database** blade, in the **Name** textbox, type **partsunlimited**.
-1.  On the **SQL Database** blade, click **Target server**.
+1. Back on the **Web App + SQL** blade, click **SQL Database**.
+
+1. On the **SQL Database** blade, in the **Name** textbox, type **partsunlimited**.
+
+1. ![01-02](../../Evidencias/mod11a/MOD10_LABb_EXER0_TASK_2_ 11.png)
+
+1. On the **SQL Database** blade, click **Target server**.
+
 1.  On the **New server** blade, specify the following settings and click **Select**:
 
     | Setting | Value |
@@ -107,7 +127,8 @@ In this task, you will create an Azure web app and an Azure SQL database by usin
     | Location | the name of the Azure region that you chose for the App Service plan |
     | Allow Azure services to access server | enabled |
 
-1.  Back on the **SQL Database** blade, click **Select**.
+1. Back on the **SQL Database** blade, click **Select**.
+
 1.  Back on the **Web App + SQL** blade, click **Create**. 
 
     > **Note**: Wait for the process to complete. This should take about 2 minutes. 
@@ -124,38 +145,55 @@ In this task, you will delete the existing pipeline.
 
     > **Note**: Before configuring YAML pipelines, you will disable the existing build pipeline.
 
-1.  On the **Pipelines** pane, select the **PartsUnlimited** entry. 
-1.  In the upper right corner of the **PartsUnlimited** blade, click the vertical ellipsis symbol and, in the drop-down menu, select **Delete**.
-1.  Write **PartsUnlimited** and click **Delete**.
-1.  In the vertical navigational pane, select the **Repos > Files**. Make sure you are in the **master** branch (dropdown on top of **Files** window), on the **azure-pipelines.yml** file, click the vertical ellipsis symbol and, in the drop-down menu, select **Delete**. Commit the change on the master branch by clicking on **Commit** (leaving default options).
+1. On the **Pipelines** pane, select the **PartsUnlimited** entry. 
+
+1. In the upper right corner of the **PartsUnlimited** blade, click the vertical ellipsis symbol and, in the drop-down menu, select **Delete**.
+
+1. Write **PartsUnlimited** and click **Delete**.
+
+   ![01-02](../../Evidencias/mod11a/MOD10_LABb_EXER1_TASK_1_ 4.png)
+
+1. In the vertical navigational pane, select the **Repos > Files**. Make sure you are in the **master** branch (dropdown on top of **Files** window), on the **azure-pipelines.yml** file, click the vertical ellipsis symbol and, in the drop-down menu, select **Delete**. Commit the change on the master branch by clicking on **Commit** (leaving default options).
+
+1.  ![01-02](../../Evidencias/mod11a/MOD10_LABb_EXER1_TASK_1_ 5.png)
 
 #### Task 2: Add a YAML build definition
 
 In this task, you will add a YAML build definition to the existing project.
 
-1.  Navigate back to the **Pipelines** pane in of the **Pipelines** hub. 
+1. Navigate back to the **Pipelines** pane in of the **Pipelines** hub. 
+
 1.  In the **Create your first Pipeline** window, click **Create pipeline**. 
 
     > **Note**: We will use the wizard to automatically create the YAML definition based on our project.
 
-1.  On the **Where is your code?** pane, click **Azure Repos Git (YAML)** option.
-1.  On the **Select a repository** pane, click **PartsUnlimited**.
-2.  On the **Configure your pipeline** pane, click **ASP<nolink>.NET** to use this template as the starting point for your pipeline. This will open the **Review your pipeline YAML** pane.
+3. On the **Where is your code?** pane, click **Azure Repos Git (YAML)** option.
 
-    > **Note**: The pipeline definition will be saved as a file named **azure-pipelines.yml** in the root of the repository. The file will contain the steps required to build and test a typical ASP<nolink>.NET solution. You can also customize the build as needed. In this scenario, you will update the **pool** to enforce the use of a VM running Visual Studio 2017.
+4. On the **Select a repository** pane, click **PartsUnlimited**.
 
-3.  Make sure  `trigger` is **master**.
+5. On the **Configure your pipeline** pane, click **ASP<nolink>.NET** to use this template as the starting point for your pipeline. This will open the **Review your pipeline YAML** pane.
 
-    > **Note**: Review in Repos if your repository has **master** or **main** branch, organizations could choose default branch name for new repos: [Change the default branch](https://docs.microsoft.com/en-us/azure/devops/repos/git/change-default-branch?view=azure-devops#choosing-a-name). 
+   > **Note**: The pipeline definition will be saved as a file named **azure-pipelines.yml** in the root of the repository. The file will contain the steps required to build and test a typical ASP<nolink>.NET solution. You can also customize the build as needed. In this scenario, you will update the **pool** to enforce the use of a VM running Visual Studio 2017.
 
-4.  On the **Review your pipeline YAML** pane, in line **10**, replace `vmImage: 'windows-latest'` with `vmImage: 'vs2017-win2016'`.
-5.  On the **Review your pipeline YAML** pane, click **Save and run**.
-6.  On the **Save and run** pane, accept the default settings and click **Save and run**.
-7.  On the pipeline run pane, in the **Jobs** section, click **Job** and monitor its progress and verify that it completes successfully. 
+   ![01-02](../../Evidencias/mod11a/MOD10_LABb_EXER1_TASK_2_ 5.png)
+
+6. Make sure  `trigger` is **master**.
+
+   > **Note**: Review in Repos if your repository has **master** or **main** branch, organizations could choose default branch name for new repos: [Change the default branch](https://docs.microsoft.com/en-us/azure/devops/repos/git/change-default-branch?view=azure-devops#choosing-a-name). 
+
+7. On the **Review your pipeline YAML** pane, in line **10**, replace `vmImage: 'windows-latest'` with `vmImage: 'vs2017-win2016'`.
+
+8. On the **Review your pipeline YAML** pane, click **Save and run**.
+
+9. ![01-02](../../Evidencias/mod11a/MOD10_LABb_EXER1_TASK_2_ 8.png)
+
+10. On the **Save and run** pane, accept the default settings and click **Save and run**.
+
+11. On the pipeline run pane, in the **Jobs** section, click **Job** and monitor its progress and verify that it completes successfully. 
 
     > **Note**: Each task from the YAML file is available for review, including any warnings and errors.
 
-8.  Return to the pipeline run pane, switch from the **Summary** tab to the **Tests** tab, and review test statistics.
+12. Return to the pipeline run pane, switch from the **Summary** tab to the **Tests** tab, and review test statistics.
 
 #### Task 3: Add continuous delivery to the YAML definition
 

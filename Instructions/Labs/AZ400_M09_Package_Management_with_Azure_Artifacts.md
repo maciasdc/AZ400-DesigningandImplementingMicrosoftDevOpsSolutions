@@ -58,13 +58,19 @@ In this task, you will use Azure DevOps Demo Generator to generate a new project
 
     > **Note**: For more information on the site, see https://docs.microsoft.com/en-us/azure/devops/demo-gen.
 
-1.  Click **Sign in** and sign in using the Microsoft account associated with your Azure DevOps subscription.
-1.  If required, on the **Azure DevOps Demo Generator** page, click **Accept** to accept the permission requests for accessing your Azure DevOps subscription.
-1.  On the **Create New Project** page, in the **New Project Name** textbox, type **Package Management with Azure Artifacts**, in the **Select organization** dropdown list, select your Azure DevOps organization, and then click **Choose template**.
-1.  On the **Choose a template** page, in the list of templates, click the **PartsUnlimited** template, and then click **Select Template**.
-1.  Back on the **Create New Project** page, click **Create Project**
+1. Click **Sign in** and sign in using the Microsoft account associated with your Azure DevOps subscription.
 
-    > **Note**: Wait for the process to complete. This should take about 2 minutes. In case the process fails, navigate to your DevOps organization, delete the project, and try again.
+1. If required, on the **Azure DevOps Demo Generator** page, click **Accept** to accept the permission requests for accessing your Azure DevOps subscription.
+
+1. On the **Create New Project** page, in the **New Project Name** textbox, type **Package Management with Azure Artifacts**, in the **Select organization** dropdown list, select your Azure DevOps organization, and then click **Choose template**.
+
+1. On the **Choose a template** page, in the list of templates, click the **PartsUnlimited** template, and then click **Select Template**.
+
+1. Back on the **Create New Project** page, click **Create Project**
+
+   > **Note**: Wait for the process to complete. This should take about 2 minutes. In case the process fails, navigate to your DevOps organization, delete the project, and try again.
+
+   ![01-02](../../Evidencias/mod09/MOD09_LAB_EXER0_TASK_01_06.png)
 
 1.  On the **Create New Project** page, click **Navigate to project**.
 
@@ -76,15 +82,24 @@ In this task, you will configure Visual Studio to prepare for the lab.
 
     > **Note**: You can access the project page directly by navigating to the [https://dev.azure.com/`<your-Azure-DevOps-account-name>`/Package%20Management%20with%20Azure%20Artifacts](https://dev.azure.com/`<your-Azure-DevOps-account-name>`/Package%20Management%20with%20Azure%20Artifacts) URL, where the `<your-Azure-DevOps-account-name>` placeholder, represents your account name. 
 
-1.  In the vertical menu on the left side of the **Package Management with Azure Artifacts** pane, click **Repos**.
-1.  On the **Files** pane, click **Clone**, click **Clone in VS Code**, and, in the dropdown menu, select **Visual Studio**.
-1.  If prompted whether to proceed, click **Open**. 
-1.  If prompted, sign in with the user account you used to set up your Azure DevOps organization.
-1.  Within the Visual Studio interface, in the **Azure DevOps** pop-up window, accept the default local path and click **Clone**. This will automatically import the project into Visual Studio and open a new web browser tab displaying the Migration Report page.
+1. In the vertical menu on the left side of the **Package Management with Azure Artifacts** pane, click **Repos**.
 
-    > **Note**: In the **Review Project and Solution Changes** dialog box, review the warnings about unsupported project types and click **OK**. 
+1. On the **Files** pane, click **Clone**, click **Clone in VS Code**, and, in the dropdown menu, select **Visual Studio**.
 
-1.  Close the web browser tab displaying the Migration Report page.
+   ![01-02](../../Evidencias/mod09/MOD09_LAB_EXER0_TASK_02_03.png)
+
+1. If prompted whether to proceed, click **Open**. 
+
+1. If prompted, sign in with the user account you used to set up your Azure DevOps organization.
+
+1. Within the Visual Studio interface, in the **Azure DevOps** pop-up window, accept the default local path and click **Clone**. This will automatically import the project into Visual Studio and open a new web browser tab displaying the Migration Report page.
+
+   > **Note**: In the **Review Project and Solution Changes** dialog box, review the warnings about unsupported project types and click **OK**. 
+
+   ![01-02](../../Evidencias/mod09/MOD09_LAB_EXER0_TASK_02_06.png)
+
+1. Close the web browser tab displaying the Migration Report page.
+
 1.  Leave Visual Studio window open for use in your lab.
 
 ### Exercise 1: Working with Azure Artifacts

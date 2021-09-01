@@ -65,15 +65,21 @@ In this task, you will use Azure DevOps Demo Generator to generate a new project
 
     > **Note**: For more information on the site, see https://docs.microsoft.com/en-us/azure/devops/demo-gen.
 
-1.  Click **Sign in** and sign in using the Microsoft account associated with your Azure DevOps subscription.
-1.  If required, on the **Azure DevOps Demo Generator** page, click **Accept** to accept the permission requests for accessing your Azure DevOps subscription.
-1.  On the **Create New Project** page, in the **New Project Name** textbox, type **Version Controlling with Git in Azure Repos**, in the **Select organization** dropdown list, select your Azure DevOps organization, and then click **Choose template**.
-1.  In the list of templates, locate the **PartsUnlimited** template and click **Select Template**.
+1. Click **Sign in** and sign in using the Microsoft account associated with your Azure DevOps subscription.
+
+1. If required, on the **Azure DevOps Demo Generator** page, click **Accept** to accept the permission requests for accessing your Azure DevOps subscription.
+
+1. On the **Create New Project** page, in the **New Project Name** textbox, type **Version Controlling with Git in Azure Repos**, in the **Select organization** dropdown list, select your Azure DevOps organization, and then click **Choose template**.
+
+1. In the list of templates, locate the **PartsUnlimited** template and click **Select Template**.
+
 1.  Back on the **Create New Project** page, click **Create Project**
 
     > **Note**: Wait for the process to complete. This should take about 2 minutes. In case the process fails, navigate to your DevOps organization, delete the project, and try again.
 
-1.  On the **Create New Project** page, click **Navigate to project**.
+1. On the **Create New Project** page, click **Navigate to project**.
+
+   ![01-02](../../Evidencias/mod04/MOD04_LAB_EXER0_TASK_1.png)
 
 #### Task 2: Install and configure Git and Visual Studio Code
 
@@ -150,14 +156,25 @@ In this task, you will create a branch by using the Azure DevOps portal and use 
 
     > **Note**: Alternatively, you can access the project page directly by navigating to the [https://dev.azure.com/`<your-Azure-DevOps-account-name>`/Version%20Controlling%20with%20Git%20in%20Azure%20Repos) URL, where the `<your-Azure-DevOps-account-name>` placeholder, represents your account name. 
 
-1.  In the web browser window, navigate to the **Commits** pane of the project and select **Branches**.
-1.  On the **Branches** pane, click **New branch**.
-1.  In the **Create a branch** panel, in the **Name** textbox, type **release**, ensure that **master** appears in the **Based on** dropdown list, in the **Work items to link** drop-down list, select one or more available work items, and click **Create**.
-1.  Switch to the **Visual Studio Code** window. 
-1.  Press **Ctrl+Shift+P** to open the **Command Palette**.
-1.  At the **Command Palette** prompt, start typing **Git: Fetch** and select **Git: Fetch** when it becomes visible. This command will update the origin branches in the local snapshot.
-1.  In the lower left corner of the Visual Studio Code window, click the **master** entry again.
-1.  In the list of branches, select **origin/release**. This will create a new local branch called **release** and check it out.
+1. In the web browser window, navigate to the **Commits** pane of the project and select **Branches**.
+
+1. On the **Branches** pane, click **New branch**.
+
+1. In the **Create a branch** panel, in the **Name** textbox, type **release**, ensure that **master** appears in the **Based on** dropdown list, in the **Work items to link** drop-down list, select one or more available work items, and click **Create**.
+
+1. Switch to the **Visual Studio Code** window. 
+
+1. Press **Ctrl+Shift+P** to open the **Command Palette**.
+
+1. At the **Command Palette** prompt, start typing **Git: Fetch** and select **Git: Fetch** when it becomes visible. This command will update the origin branches in the local snapshot.
+
+1. In the lower left corner of the Visual Studio Code window, click the **master** entry again.
+
+1. In the list of branches, select **origin/release**. This will create a new local branch called **release** and check it out.
+
+   ![01-02](../../Evidencias/mod04/MOD04_LAB_EXER2_TASK_1.png)
+
+![01-02](../../Evidencias/mod04/MOD04_LAB_EXER2_TASK_1b.png)
 
 #### Task 2: Delete and restore a branch
 

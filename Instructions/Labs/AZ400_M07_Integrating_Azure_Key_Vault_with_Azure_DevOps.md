@@ -52,6 +52,8 @@ Identify the applications that you'll use in this lab:
 -   Identify an existing Azure subscription or create a new one.
 -   Verify that you have a Microsoft account or an Azure AD account with the Owner role in the Azure subscription and the Global Administrator role in the Azure AD tenant associated with the Azure subscription. For details, refer to [List Azure role assignments using the Azure portal](https://docs.microsoft.com/en-us/azure/role-based-access-control/role-assignments-list-portal) and [View and assign administrator roles in Azure Active Directory](https://docs.microsoft.com/en-us/azure/active-directory/roles/manage-roles-portal#view-my-roles).
 
+![01-02](../../Evidencias/mod07/MOD07_LAB_previous_01.png)
+
 #### Set up an Azure DevOps organization
 
 If you don't already have an Azure DevOps organization that you can use for this lab, create one by following the instructions available at [Create an organization or project collection](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/create-organization?view=azure-devops).
@@ -68,15 +70,21 @@ In this task, you will use Azure DevOps Demo Generator to generate a new project
 
     > **Note**: For more information on the site, see https://docs.microsoft.com/en-us/azure/devops/demo-gen.
 
-1.  Click **Sign in** and sign in using the Microsoft account associated with your Azure DevOps subscription.
-1.  If required, on the **Azure DevOps Demo Generator** page, click **Accept** to accept the permission requests for accessing your Azure DevOps subscription.
-1.  On the **Create New Project** page, in the **New Project Name** textbox, type **Integrating Azure Key Vault with Azure DevOps**, in the **Select organization** dropdown list, select your Azure DevOps organization, and then click **Choose template**.
-1.  On the **Choose a template** page, in the header menu, click **DevOps Labs**, in the list of templates, click the **Azure Key Vault** template, and then click **Select Template**.
+1. Click **Sign in** and sign in using the Microsoft account associated with your Azure DevOps subscription.
+
+1. If required, on the **Azure DevOps Demo Generator** page, click **Accept** to accept the permission requests for accessing your Azure DevOps subscription.
+
+1. On the **Create New Project** page, in the **New Project Name** textbox, type **Integrating Azure Key Vault with Azure DevOps**, in the **Select organization** dropdown list, select your Azure DevOps organization, and then click **Choose template**.
+
+1. On the **Choose a template** page, in the header menu, click **DevOps Labs**, in the list of templates, click the **Azure Key Vault** template, and then click **Select Template**.
+
 1.  Back on the **Create New Project** page, select the checkbox below the **ARM Outputs** label, and click **Create Project**
 
     > **Note**: Wait for the process to complete. This should take about 2 minutes. In case the process fails, navigate to your DevOps organization, delete the project, and try again.
 
-1.  On the **Create New Project** page, click **Navigate to project**.
+1. On the **Create New Project** page, click **Navigate to project**.
+
+   ![01-02](../../Evidencias/mod07/MOD07_LAB_EXER0_TASK_01.png)
 
 ### Exercise 1: Integrate Azure Key Vault with Azure DevOps
 
@@ -95,8 +103,14 @@ You will need a service principal to deploy an app to an Azure resource from Azu
 
 A service principal is automatically created by Azure Pipeline when you connect to an Azure subscription from inside a pipeline definition or when you create a new service connection from the project settings page. You can also manually create the service principal from the portal or using Azure CLI and re-use it across projects. It is recommended that you use an existing service principal when you want to have a pre-defined set of permissions.
 
-1.  From the lab computer, start a web browser, navigate to the [**Azure Portal**](https://portal.azure.com), and sign in with the user account that has the Owner role in the Azure subscription you will be using in this lab and has the role of the Global Administrator in the Azure AD tenant associated with this subscription.
-1.  In the Azure portal, click the **Cloud Shell** icon, located directly to the right of the search textbox at the top of the page. 
+1. From the lab computer, start a web browser, navigate to the [**Azure Portal**](https://portal.azure.com), and sign in with the user account that has the Owner role in the Azure subscription you will be using in this lab and has the role of the Global Administrator in the Azure AD tenant associated with this subscription.
+
+   ![01-02](../../Evidencias/mod07/MOD07_LAB_EXER1_TASK_01_01.png)
+
+1. In the Azure portal, click the **Cloud Shell** icon, located directly to the right of the search textbox at the top of the page. 
+
+   ![01-02](../../Evidencias/mod07/MOD07_LAB_EXER1_TASK_01_02.png)
+
 1.  If prompted to select either **Bash** or **PowerShell**, select **Bash**. 
 
    >**Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Create storage**. 
@@ -125,8 +139,10 @@ In this task, you will create an Azure Key vault by using the Azure portal.
 
 For this lab scenario, we have an app that connects to a MySQL database. We intend to store the password for the MySQL database as a secret in the key vault.
 
-1.  In the Azure portal, in the **Search resources, services, and docs** text box, type **Key vaults** and press the **Enter** key. 
-1.  On the **Key vaults** blade, click **+ Add**. 
+1. In the Azure portal, in the **Search resources, services, and docs** text box, type **Key vaults** and press the **Enter** key. 
+
+1. On the **Key vaults** blade, click **+ Add**. 
+
 1.  On the **Basics** tab of the **Create key vault** blade, specify the following settings and click **Next: Access policy**:
 
     | Setting | Value |
@@ -143,19 +159,28 @@ For this lab scenario, we have an app that connects to a MySQL database. We inte
 
     > **Note**: You need to secure access to your key vaults by allowing only authorized applications and users. To access the data from the vault, you will need to provide read (Get) permissions to the service principal that you will be using for authentication in the pipeline. 
 
-1.  On the **Add access policy** blade, click the **None selected** link directly under the **Select principal** label. 
+1. On the **Add access policy** blade, click the **None selected** link directly under the **Select principal** label. 
+
 1.  On the **Principal** blade, search for the security principal that you created in the previous exercise, select it, and then click **Select**. 
 
     > **Note**: You can search by name or ID of the principal.
 
-1.  Back on the **Add access policy** blade, in the **Secret permissions** drop down list, select checkboxes next to the **Get** and **List** permissions and then click **Add**. 
-1.  Back on the **Access policy** tab of the **Create key vault** blade, click **Review + create** and, on the **Review + create** blade, click **Create**. 
+1. Back on the **Add access policy** blade, in the **Secret permissions** drop down list, select checkboxes next to the **Get** and **List** permissions and then click **Add**. 
 
-    > **Note**: Wait for the Azure Key vault to be provisioned. This should take less than 1 minute.
+1. Back on the **Access policy** tab of the **Create key vault** blade, click **Review + create** and, on the **Review + create** blade, click **Create**. 
 
-1.  On the **Your deployment is complete** blade, click **Go to resource**.
-1.  On the Azure Key vault blade, in the vertical menu on the left side of the blade, in the **Settings** section, click **Secrets**. 
-1.  On the **Secrets** blade, click **Generate/Import**.
+   > **Note**: Wait for the Azure Key vault to be provisioned. This should take less than 1 minute.
+
+   ![01-02](../../Evidencias/mod07/MOD07_LAB_EXER1_TASK_02_08.png)
+
+1. On the **Your deployment is complete** blade, click **Go to resource**.
+
+   ![01-02](../../Evidencias/mod07/MOD07_LAB_EXER1_TASK_02_09.png)
+
+1. On the Azure Key vault blade, in the vertical menu on the left side of the blade, in the **Settings** section, click **Secrets**. 
+
+1. On the **Secrets** blade, click **Generate/Import**.
+
 1.  On the **Create a secret** blade, specify the following settings and click **Create** (leave others with their default values):
 
     | Setting | Value |

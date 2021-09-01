@@ -68,13 +68,19 @@ In this task, you will use Azure DevOps Demo Generator to generate a new project
 
     > **Note**: For more information on the site, see https://docs.microsoft.com/en-us/azure/devops/demo-gen.
 
-1.  Click **Sign in** and sign in using the Microsoft account associated with your Azure DevOps subscription.
-1.  If required, on the **Azure DevOps Demo Generator** page, click **Accept** to accept the permission requests for accessing your Azure DevOps subscription.
-1.  On the **Create New Project** page, in the **New Project Name** textbox, type **LaunchDarkly**, in the **Select organization** dropdown list, select your Azure DevOps organization, and then click **Choose template**.
-1.  In the list of templates, in the toolbar, click **DevOps Labs**, select the **LaunchDarkly** template and click **Select Template**.
-1.  Back on the **Create New Project** page, if prompted to install a missing extension, select the checkbox below the **LaunchDarkly Integration V2** label and click **Create Project**
+1. Click **Sign in** and sign in using the Microsoft account associated with your Azure DevOps subscription.
 
-    > **Note**: Wait for the process to complete. This should take about 2 minutes. In case the process fails, navigate to your DevOps organization, delete the project, and try again.
+1. If required, on the **Azure DevOps Demo Generator** page, click **Accept** to accept the permission requests for accessing your Azure DevOps subscription.
+
+1. On the **Create New Project** page, in the **New Project Name** textbox, type **LaunchDarkly**, in the **Select organization** dropdown list, select your Azure DevOps organization, and then click **Choose template**.
+
+1. In the list of templates, in the toolbar, click **DevOps Labs**, select the **LaunchDarkly** template and click **Select Template**.
+
+1. Back on the **Create New Project** page, if prompted to install a missing extension, select the checkbox below the **LaunchDarkly Integration V2** label and click **Create Project**
+
+   > **Note**: Wait for the process to complete. This should take about 2 minutes. In case the process fails, navigate to your DevOps organization, delete the project, and try again.
+
+   ![01-02](../../Evidencias/mod12/MOD12_LAB_EXER0_TASK_01_06.png)
 
 1.  On the **Create New Project** page, click **Navigate to project**.
 
@@ -258,7 +264,7 @@ In this task, you will configure automatic roll out of the LaunchDarkly feature 
 1.  On the Parts Unlimited web page, verify that the **Member Portal** feature is enabled.
 
 > **Note**: LaunchDarkly offers a number of other features, including:
-    
+
 - **User Targeting**: LaunchDarkly targeting lets you turn features on or off for individual users or groups of users. You can use it to roll features out for internal testing, private betas, or usability tests before performing a broader rollout. 
 - **Custom targeting rules**: In addition to targeting individual users, LaunchDarkly allows you to target segments of users by constructing custom rules. In other words, you can create custom rules to target users based on any attributes you specify. 
 - **Projects and environments to manage your development process**: [Projects](https://docs.launchdarkly.com/docs/projects) allow you to manage multiple different software projects under one LaunchDarkly account. [Environments](https://docs.launchdarkly.com/docs/environments) allow you to manage your feature flags throughout your entire development lifecycle — from local development to QA, staging, and production. 

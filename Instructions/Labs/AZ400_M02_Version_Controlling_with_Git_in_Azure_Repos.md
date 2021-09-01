@@ -67,15 +67,21 @@ In this task, you will use Azure DevOps Demo Generator to generate a new project
 
     > **Note**: For more information on the site, see https://docs.microsoft.com/en-us/azure/devops/demo-gen.
 
-1.  Click **Sign in** and sign in using the Microsoft account associated with your Azure DevOps subscription.
-1.  If required, on the **Azure DevOps Demo Generator** page, click **Accept** to accept the permission requests for accessing your Azure DevOps subscription.
-1.  On the **Create New Project** page, in the **New Project Name** textbox, type **Version Controlling with Git in Azure Repos**, in the **Select organization** dropdown list, select your Azure DevOps organization, and then click **Choose template**.
-1.  In the list of templates, locate the **PartsUnlimited** template and click **Select Template**.
+1. Click **Sign in** and sign in using the Microsoft account associated with your Azure DevOps subscription.
+
+1. If required, on the **Azure DevOps Demo Generator** page, click **Accept** to accept the permission requests for accessing your Azure DevOps subscription.
+
+1. On the **Create New Project** page, in the **New Project Name** textbox, type **Version Controlling with Git in Azure Repos**, in the **Select organization** dropdown list, select your Azure DevOps organization, and then click **Choose template**.
+
+1. In the list of templates, locate the **PartsUnlimited** template and click **Select Template**.
+
 1.  Back on the **Create New Project** page, click **Create Project**
 
     > **Note**: Wait for the process to complete. This should take about 2 minutes. In case the process fails, navigate to your Azure DevOps organization, delete the project, and try again.
 
-1.  On the **Create New Project** page, click **Navigate to project**.
+1. On the **Create New Project** page, click **Navigate to project**.
+
+   ![01-02](../../Evidencias/mod02/MOD02_LAB_EXER0_TASK_1.png)
 
 #### Task 2: Install and configure Git and Visual Studio Code
 
@@ -101,6 +107,8 @@ In this task, you will install and configure Git and Visual Studio Code, includi
     git config --global user.name "<John Doe>"
     git config --global user.email <johndoe@example.com>
     ```
+
+![01-02](../../Evidencias/mod02/MOD02_LAB_EXER0_TASK_2_8.png)
 
 ### Exercise 1: Clone an existing repository
 
@@ -140,6 +148,8 @@ In this task, you will step through the process of cloning a Git repository by u
 
     > **Note**: You can ignore warnings you might receive regarding problems with loading of the project. The solution may not be in the state suitable for a build, but we're going to focus on working with Git, so building the project is not required.
 
+![01-02](../../Evidencias/mod02/MOD02_LAB_EXER1_TASK_1.png)
+
 ### Exercise 2: Save work with commits
 
 In this exercise, you will step through several scenarios that involve the use of Visual Studio Code to stage and commit changes.
@@ -156,7 +166,8 @@ Git commits consists of the following:
 
 In this task, you will use Visual Studio Code to commit changes.
 
-1.  In the Visual Studio Code window, at the top of the vertical toolbar, select the **EXPLORER** tab, navigate to the **/PartsUnlimited-aspnet45/src/PartsUnlimitedWebsite/Models/CartItem.cs** file and select it. This will automatically display its content in the details pane.
+1. In the Visual Studio Code window, at the top of the vertical toolbar, select the **EXPLORER** tab, navigate to the **/PartsUnlimited-aspnet45/src/PartsUnlimitedWebsite/Models/CartItem.cs** file and select it. This will automatically display its content in the details pane.
+
 1.  Add to the **CartItem.cs** file right above the `[key]` entry an extra line containing the following comment: 
 
     ```csharp
@@ -165,14 +176,19 @@ In this task, you will use Visual Studio Code to commit changes.
 
     > **Note**: It doesn't really matter what the comment is since the goal is just to make a change. 
 
-1.  Press **Ctrl+S** to save the change.
-1.  In the Visual Studio Code window, select the **SOURCE CONTROL** tab to verify that Git recognized the latest change to the file residing in the local clone of the Git repository.
-1.  With the **SOURCE CONTROL** tab selected, at the top of the pane, in the textbox, type **My commit** as the commit message and press **Ctrl+Enter** to commit it locally.
+1. Press **Ctrl+S** to save the change.
+
+1. In the Visual Studio Code window, select the **SOURCE CONTROL** tab to verify that Git recognized the latest change to the file residing in the local clone of the Git repository.
+
+1. With the **SOURCE CONTROL** tab selected, at the top of the pane, in the textbox, type **My commit** as the commit message and press **Ctrl+Enter** to commit it locally.
+
 1.  If prompted whether you would like to automatically stage your changes and commit them directly, click **Always**. 
 
     > **Note**: We will discuss **staging** later in the lab.
 
-1.  In the lower left corner of the Visual Studio Code window, to the right of the **master** label, note the **Synchronize Changes** icon of a circle with two vertical arrows pointing in the opposite directions and the number **1** next to the arrow pointing up. Click the icon and, if prompted, whether to proceed, click **OK** to push and pull commits to and from **origin/master**. 
+1. In the lower left corner of the Visual Studio Code window, to the right of the **master** label, note the **Synchronize Changes** icon of a circle with two vertical arrows pointing in the opposite directions and the number **1** next to the arrow pointing up. Click the icon and, if prompted, whether to proceed, click **OK** to push and pull commits to and from **origin/master**. 
+
+   ![01-02](../../Evidencias/mod02/MOD02_LAB_EXER2_TASK_1.png)
 
 #### Task 2: Review commits
 

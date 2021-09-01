@@ -67,17 +67,23 @@ In this lab, you will create an Azure Resource manager template and modularize i
 
 In this task, you will use Visual Studio Code to create a Resource Manager template
 
-1.  From your lab computer, start Visual Studio Code, in Visual Studio Code, click the **File** top level menu, in the dropdown menu, select **Preferences**, in the cascading menu, select **Extensions**, in the **Search Extensions** textbox, type **Azure Resource Manager (ARM) Tools**, select the corresponding search result, and click **Install** to install the Azure Resource Manager Tools
-1.  In a web browser, connect to **https://github.com/Azure/azure-quickstart-templates/blob/master/101-vm-simple-windows/azuredeploy.json**. Copy the contents of the code window and past it into Visual Studio Code editor.
+1. From your lab computer, start Visual Studio Code, in Visual Studio Code, click the **File** top level menu, in the dropdown menu, select **Preferences**, in the cascading menu, select **Extensions**, in the **Search Extensions** textbox, type **Azure Resource Manager (ARM) Tools**, select the corresponding search result, and click **Install** to install the Azure Resource Manager Tools
 
-    > **Note**: Rather than creating a template from scratch we will use one of the [Azure Quickstart Templates](https://azure.microsoft.com/en-us/resources/templates/) named **Deploy a simple Windows template VM**. The templates are downloadable the templates from GitHub - [101-vm-simple-windows](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-simple-windows).
+1. In a web browser, connect to **https://github.com/Azure/azure-quickstart-templates/blob/master/101-vm-simple-windows/azuredeploy.json**. Copy the contents of the code window and past it into Visual Studio Code editor.
+
+   > **Note**: Rather than creating a template from scratch we will use one of the [Azure Quickstart Templates](https://azure.microsoft.com/en-us/resources/templates/) named **Deploy a simple Windows template VM**. The templates are downloadable the templates from GitHub - [101-vm-simple-windows](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-simple-windows).
+
+   ![01-02](../../Evidencias/mod13/MOD13_LAB_EXER1_TASK_01_02.png)
 
 1.  On your lab computer, open File Explorer and create the following local folders that will serve to store templates:
 
     - **C:\\templates** 
     - **C:\\templates\\storage** 
 
-1.  Switch back to Visual Studio Code window with our azuredeploy.json template, click the **File** top level menu, in the dropdown menu, click **Save as**, and save the template as **azuredeploy.json** in the newly created local folder **C:\\templates**.
+1. Switch back to Visual Studio Code window with our azuredeploy.json template, click the **File** top level menu, in the dropdown menu, click **Save as**, and save the template as **azuredeploy.json** in the newly created local folder **C:\\templates**.
+
+   ![01-02](../../Evidencias/mod13/MOD13_LAB_EXER1_TASK_01_04.png)
+
 1.  Review the template to get a better understanding of its structure. There are five resource types included in the template:
 
     - Microsoft.Storage/storageAccounts
@@ -233,6 +239,8 @@ In this task, you will modify the templates you saved in the previous task such 
     }
     ```
 
+![01-02](../../Evidencias/mod13/MOD13_LAB_EXER1_TASK_02_07.png)
+
 #### Task 3: Upload Linked Template to Azure Blob Storage and generate SAS token
 
 In this task, you will upload the linked template you created in the previous task to Azure Blob Storage and generate SAS token to provide access to it during subsequent deployments.
@@ -249,13 +257,15 @@ In this task, you will upload the linked template you created in the previous ta
 
     >**Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Create storage**. 
 
-1.  From a **PowerShell** session in the Cloud Shell pane, run the following to create a blob storage container, upload the template file you created in the previous task, and generate a SAS token that you will reference in the main template to access the linked template.
+1. From a **PowerShell** session in the Cloud Shell pane, run the following to create a blob storage container, upload the template file you created in the previous task, and generate a SAS token that you will reference in the main template to access the linked template.
+
 1.  First, copy and paste the following lines of code to set a value for the Azure region you want to deploy to. The command will wait for your input as shown in the prompt.
 
     ```powershell
     # Provide the name of the closest Azure region in which you can provision Azure VMs
     $location = Read-Host -Prompt 'Enter the name of Azure region (i.e. centralus)'
     ```
+    
 1. Second, copy and paste the following code into the same Cloud Shell session to create a blob storage container, upload the template file you created in the previous task, and generate a SAS token that you will reference in the main template to access the linked template:
 
     ```powershell
@@ -263,13 +273,13 @@ In this task, you will upload the linked template you created in the previous ta
     $suffix = Get-Random
     $resourceGroupName = 'az400m13l01-RG'
     $storageAccountName = 'az400m13blob' + $suffix
-
+    
     # The name of the Blob container to be created
     $containerName = 'linktempblobcntr' 
     
     # A completed linked template used in this lab
     $linkedTemplateURL = "https://raw.githubusercontent.com/Microsoft/PartsUnlimited/master/Labfiles/AZ-400T05_Implementing_Application_Infrastructure/M01/storage.json" 
-
+    
     # A file name used for downloading and uploading the linked template
     $fileName = 'storage.json' 
     
@@ -311,7 +321,7 @@ In this task, you will upload the linked template you created in the previous ta
     "Linked template URI with SAS token: $templateURI"
     ```
     >**Note**: Make sure to record the final output generated by the script. You will need it later in the lab.
-    
+
     >**Note**: The output values should resemble the following:
 
     ```
@@ -321,7 +331,25 @@ In this task, you will upload the linked template you created in the previous ta
 
     >**Note**: For scenarios requiring increased level of security, you could generate a SAS token dynamically during main template deployment and assign the SAS token a shorter validity period.
 
-1.  Close the Cloud Shell pane.
+    ![01-02](../../Evidencias/mod13/MOD13_LAB_EXER1_TASK_03_06.png)
+
+    ![01-02](../../Evidencias/mod13/MOD13_LAB_EXER1_TASK_03_06b.png)
+
+    ![01-02](../../Evidencias/mod13/MOD13_LAB_EXER1_TASK_03_06c.png)
+
+    ![01-02](../../Evidencias/mod13/MOD13_LAB_EXER1_TASK_03_06c.png)
+
+    ![01-02](../../Evidencias/mod13/MOD13_LAB_EXER1_TASK_03_07.png)
+
+    ![01-02](../../Evidencias/mod13/MOD13_LAB_EXER1_TASK_03_07b.png)
+
+    ![01-02](../../Evidencias/mod13/MOD13_LAB_EXER1_TASK_03_07c.png)
+
+    ![01-02](../../Evidencias/mod13/MOD13_LAB_EXER1_TASK_03_07d.png)
+
+1. Close the Cloud Shell pane.
+
+    
 
 #### Task 4: Modify the main template to call the linked template
 
@@ -329,7 +357,8 @@ In this task, you will modify the main template to reference the linked template
 
 > **Note**: To account for the changes we made to the templates structure by modularizing all the storage elements, we now need to modify the main template to call the new storage resource definition.
 
-1.  In Visual Studio Code, click the **File** top level menu, in the dropdown menu, select **Open File**, in the Open File dialog box, navigate to **C:\\templates\\azuredeploy.json**, select it, and click **Open**.
+1. In Visual Studio Code, click the **File** top level menu, in the dropdown menu, select **Open File**, in the Open File dialog box, navigate to **C:\\templates\\azuredeploy.json**, select it, and click **Open**.
+
 1.  In the **azuredeploy.json** file, in the resource section remove the storage resource element
 
     ```json
@@ -346,27 +375,29 @@ In this task, you will modify the main template to reference the linked template
     },
     ```
 
-1.  Next, add the following code directly in the same location where the newly deleted storage resource element was:
+1. Next, add the following code directly in the same location where the newly deleted storage resource element was:
 
-    > **Note**: Make sure to replace the `<linked_template_URI_with_SAS_token>` placeholder with its actual value that you recorded at the end of the previous task.
+   > **Note**: Make sure to replace the `<linked_template_URI_with_SAS_token>` placeholder with its actual value that you recorded at the end of the previous task.
 
-    ```json
-    {
-      "name": "linkedTemplate",
-      "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2018-05-01",
-      "properties": {
-          "mode": "Incremental",
-          "templateLink": {
-              "uri":"<linked_template_URI_with_SAS_token>"
-          },
-          "parameters": {
-              "storageAccountName":{"value": "[variables('storageAccountName')]"},
-              "location":{"value": "[parameters('location')]"}
-          }
-       }
-    },
-    ```    
+   ```json
+   {
+     "name": "linkedTemplate",
+     "type": "Microsoft.Resources/deployments",
+     "apiVersion": "2018-05-01",
+     "properties": {
+         "mode": "Incremental",
+         "templateLink": {
+             "uri":"<linked_template_URI_with_SAS_token>"
+         },
+         "parameters": {
+             "storageAccountName":{"value": "[variables('storageAccountName')]"},
+             "location":{"value": "[parameters('location')]"}
+         }
+      }
+   },
+   ```
+
+   ![01-02](../../Evidencias/mod13/MOD13_LAB_EXER1_TASK_04_2.png)
 
 1.  Review the following details in the main template:
 
@@ -399,27 +430,29 @@ In this task, you will modify the main template to account for remaining depende
    "dependsOn": [
      "linkedTemplate",
      "[resourceId('Microsoft.Network/networkInterfaces/', variables('nicName'))]"
-    ```
+   ```
 
-1.  In the resources section under the **Microsoft.Compute/virtualMachines** element, reconfigure the **properties/diagnosticsProfile/bootDiagnostics/storageUri** element to reflect the output value you defined in the linked storage template by replacing:
+1. In the resources section under the **Microsoft.Compute/virtualMachines** element, reconfigure the **properties/diagnosticsProfile/bootDiagnostics/storageUri** element to reflect the output value you defined in the linked storage template by replacing:
 
-    ```json
-    "diagnosticsProfile": {
-      "bootDiagnostics": {
-        "enabled": true,
-        "storageUri": "[reference(resourceId('Microsoft.Storage/storageAccounts/', variables('storageAccountName'))).primaryEndpoints.blob]"
-      }
-    ```
+   ```json
+   "diagnosticsProfile": {
+     "bootDiagnostics": {
+       "enabled": true,
+       "storageUri": "[reference(resourceId('Microsoft.Storage/storageAccounts/', variables('storageAccountName'))).primaryEndpoints.blob]"
+     }
+   ```
 
-    with
+   with
 
-    ```json
-    "diagnosticsProfile": {
-      "bootDiagnostics": {
-        "enabled": true,
-        "storageUri": "[reference('linkedtemplate').outputs.storageUri.value]"
-      }
-    ```
+   ```json
+   "diagnosticsProfile": {
+     "bootDiagnostics": {
+       "enabled": true,
+       "storageUri": "[reference('linkedtemplate').outputs.storageUri.value]"
+     }
+   ```
+
+   ![01-02](../../Evidencias/mod13/MOD13_LAB_EXER1_TASK_05_2.png)
 
 1.  Save the updated main deployment template.
 
@@ -430,6 +463,7 @@ In this task, you will modify the main template to account for remaining depende
 > **Note**: To use Azure Cloud Shell, you will upload the main deployment template, azuredeploy.json into your Cloud Shell's home directory. Alternatively, you could also upload it to Azure Blob Storage, just as you did upload the linked template, and reference it by using its URI rather than local file system path.
 
 1.  On the lab computer, in the web browser displaying the Azure Portal, click the **Cloud Shell** icon to open Cloud Shell. 
+    
     > **Note**: If you have the PowerShell session from earlier in this exercise still active, you can use this without switching to Bash (next step). The following steps can be run in both a PowerShell and Bash session of Cloud Shell. If you are opening a new Cloud Shell session, follow the instructions. 
 1.  In the Cloud Shell pane, click **PowerShell**, in the dropdown menu, click **Bash** and, when prompted, click **Confirm**. 
 1.  In the Cloud Shell pane, click the **Upload/download files** icon and, in the dropdown menu, click **Upload**. 
@@ -451,6 +485,16 @@ In this task, you will modify the main template to account for remaining depende
 > **Note**: As a next step, you could now modularize the remaining resource definitions in the main deployment template, such as the network and virtual machine resource definitions. 
 
 > **Note**: If you are not planning on using the deployed resources, you should delete them to avoid associated charges. You can do so simply by deleting the resource group **az400m13l01-RG**.
+
+![01-02](../../Evidencias/mod13/MOD13_LAB_EXER1_TASK_06.png)
+
+
+
+![01-02](../../Evidencias/mod13/MOD13_LAB_EXER1_TASK_06b.png)
+
+![01-02](../../Evidencias/mod13/MOD13_LAB_EXER1_TASK_06c.png)
+
+![01-02](../../Evidencias/mod13/MOD13_LAB_EXER1_TASK_06d.png)
 
 ### Exercise 2: Remove the Azure lab resources
 

@@ -58,22 +58,32 @@ In this exercise, you will create a release dashboard in an Azure DevOps organiz
 
 In this task, you will create an Azure DevOps Starter resource in your Azure subscription. This will automatically create a corresponding project in your Azure DevOps organization. 
 
-1.  On your lab computer, start a web browser, navigate to the [**Azure Portal**](https://portal.azure.com) and sign in with the user account that has the Owner or Contributor role in the Azure subscription you will be using in this lab.
-1.  In the Azure portal, search for and select the **DevOps Starter** resource type and, on the **DevOps Starter** blade, click **+ Add**. 
-1.  On the **DevOps Starter** blade, on the **Start fresh with a new application** pane, select the **.NET** tile and on the tops next to Setting up DevOps starter with GitHub, change settings, click **here** and select **Azure DevOps** , **Done** and **Next: Framework >**. 
-1.  On the **DevOps Starter** blade, on the **Choose an application framework** pane, select the **ASP<nolink>.NET Core** tile, move the **Add a database** slider to the **On** position, and click **Next: Service >**. 
-1.  On the **DevOps Starter** blade, on the **Select an Azure service to deploy the application** pane, ensure that the **Windows Web App** tile is selected and click **Next: Create >**. 
-1.  On the **DevOps Starter** blade, on the **Almost there** pane, specify the following settings:
+1. On your lab computer, start a web browser, navigate to the [**Azure Portal**](https://portal.azure.com) and sign in with the user account that has the Owner or Contributor role in the Azure subscription you will be using in this lab.
 
-    | Setting | Value |
-    | ------- | ----- |
-    | Project name | **Creating a Release Dashboard** |
-    | Azure DevOps Organization | the name of the Azure DevOps organization you intend to use in this lab |
-    | Subscription | the name of the Azure subscription you are using in this lab |
-    | Web app name | any globally unique string between 2 and 60 characters consisting of letters, digits, and hyphens, starting and ending with either a letter or a digit |
-    | Location | the name of Azure region into which you intend to deploy an Azure web app and an Azure SQL database |
+1. In the Azure portal, search for and select the **DevOps Starter** resource type and, on the **DevOps Starter** blade, click **+ Add**. 
 
-1.  On the **DevOps Starter** blade, on the **Almost there** pane, click **Additional settings**.
+1. On the **DevOps Starter** blade, on the **Start fresh with a new application** pane, select the **.NET** tile and on the tops next to Setting up DevOps starter with GitHub, change settings, click **here** and select **Azure DevOps** , **Done** and **Next: Framework >**. 
+
+   ![01-02](../../Evidencias/mod10b/MOD10_LABb_EXER1_TASK_1_ 3.png)
+
+1. On the **DevOps Starter** blade, on the **Choose an application framework** pane, select the **ASP<nolink>.NET Core** tile, move the **Add a database** slider to the **On** position, and click **Next: Service >**. 
+
+1. On the **DevOps Starter** blade, on the **Select an Azure service to deploy the application** pane, ensure that the **Windows Web App** tile is selected and click **Next: Create >**. 
+
+1. On the **DevOps Starter** blade, on the **Almost there** pane, specify the following settings:
+
+   | Setting | Value |
+   | ------- | ----- |
+   | Project name | **Creating a Release Dashboard** |
+   | Azure DevOps Organization | the name of the Azure DevOps organization you intend to use in this lab |
+   | Subscription | the name of the Azure subscription you are using in this lab |
+   | Web app name | any globally unique string between 2 and 60 characters consisting of letters, digits, and hyphens, starting and ending with either a letter or a digit |
+   | Location | the name of Azure region into which you intend to deploy an Azure web app and an Azure SQL database |
+
+   ![01-02](../../Evidencias/mod10b/MOD10_LABb_EXER1_TASK_1_ 6.png)
+
+1. On the **DevOps Starter** blade, on the **Almost there** pane, click **Additional settings**.
+
 1.  On the **Additional settings** pane, specify the following settings and click **OK**.
 
     | Setting | Value |
@@ -91,10 +101,13 @@ In this task, you will create an Azure DevOps Starter resource in your Azure sub
 
     > **Note**: Wait for the deployment to complete. The provisioning of the **DevOps Starter** resource should take about 2 minutes.
 
-1.  Once you receive the confirmation that the DevOps Starter resource was provisioned, click the **Go to resource** button. This will redirect the browser to the DevOps Starter blade.
+1. Once you receive the confirmation that the DevOps Starter resource was provisioned, click the **Go to resource** button. This will redirect the browser to the DevOps Starter blade.
+
 1.  On the DevOps Starter blade, track the progress of CI/CD pipeline until it completes successfully. 
 
     > **Note**: The creation of the corresponding Azure web app and Azure SQL database might take about 5 minutes. The process automatically creates an Azure DevOps project that includes a ready-to-deploy repository as well as the build and release pipelines. The Azure resources are created as part of the automatically triggered deployment pipeline. 
+
+![01-02](../../Evidencias/mod10b/MOD10_LABb_EXER1_TASK_1_ 11.png)
 
 #### Task 2: Create Azure DevOps releases
 

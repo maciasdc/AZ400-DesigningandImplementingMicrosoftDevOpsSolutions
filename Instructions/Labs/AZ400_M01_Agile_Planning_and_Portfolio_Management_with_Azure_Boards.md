@@ -208,11 +208,19 @@ Work items play a prominent role in Azure DevOps. Whether describing work to be 
 
 1. In the vertical navigational pane of the Azure DevOps portal, in the list of the **Boards** items, select **Boards**.
 
-1.  On the **Boards** panel, select the **PUL-Web boards** entry. This will open the board for that particular team.
+1. On the **Boards** panel, select the **PUL-Web boards** entry. This will open the board for that particular team.
 
-1.  On the **Boards** panel, in the upper right corner, select the **Backlog items** entry and, in the dropdown list, select **Features**. 
+   **EVIDENCIA:**
 
-    > **Note**: This will make it easy to add tasks and other work items to the features.
+   ![01-02](../../Evidencias/mod01/MOD01_LAB_EXER1_TASK_2_12.png)
+
+1. On the **Boards** panel, in the upper right corner, select the **Backlog items** entry and, in the dropdown list, select **Features**. 
+
+   **EVIDENCIA:**
+
+   ![01-02](../../Evidencias/mod01/MOD01_LAB_EXER1_TASK_2_13.png)s
+
+   > **Note**: This will make it easy to add tasks and other work items to the features.
 
 1. Hover with the mouse pointer over the rectangle representing the **Training dashboard** feature. This will reveal the ellipsis  symbol in its upper right corner.
 
