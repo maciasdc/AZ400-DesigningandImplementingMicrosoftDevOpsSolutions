@@ -80,11 +80,9 @@ In this task, you will fork a GitHub repo and install Azure Pipelines in your Gi
 
 7. On the **Review your order** page, click **Complete order and begin installation**.
 
-<<<<<<< HEAD
+
    ![01-02](../../Evidencias/mod06b/MOD06_LABb_EXER1_TASK_1_ 7.png)
-=======
-   ![01-02] (../../Evidencias/mod06.b/MOD06_LABb_EXER1_TASK_1_ 7.png)
->>>>>>> e7ec97fa68e78997b8755b26381183b21f3f4dba
+
 
 8. On the **Install Azure Pipelines** page, use the default option **All repositories** and click **Install**.
 
@@ -96,11 +94,7 @@ In this task, you will fork a GitHub repo and install Azure Pipelines in your Gi
 
 11. When prompted, on the **Setup your Azure Pipelines project** page, in the **Project name** textbox, type **Integrating External Source Control with Azure Pipelines**, leave the **Project visibility** set to **Private**, and click **Continue**.
 
-<<<<<<< HEAD
     ![01-02](../../Evidencias/mod06b/MOD06_LABb_EXER1_TASK_1_ 11.png)
-=======
-    ![01-02] (../../Evidencias/mod06.b/MOD06_LABb_EXER1_TASK_1_ 11.png)
->>>>>>> e7ec97fa68e78997b8755b26381183b21f3f4dba
 
 12. On the **Azure Pipelines by Microsoft would like permission to** page, click **Authorize Azure Pipelines**.
 
