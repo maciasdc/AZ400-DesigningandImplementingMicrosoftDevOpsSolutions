@@ -80,7 +80,7 @@ In this task, you will fork a GitHub repo and install Azure Pipelines in your Gi
 
 7. On the **Review your order** page, click **Complete order and begin installation**.
 
-   ![01-02](../../Evidencias/mod06b/MOD06_LABb_EXER1_TASK_1_ 7.png)
+   ![01-02](../../Evidencias/mod06.b/MOD06_LABb_EXER1_TASK_1_ 7.png)
 
 8. On the **Install Azure Pipelines** page, use the default option **All repositories** and click **Install**.
 
@@ -92,7 +92,7 @@ In this task, you will fork a GitHub repo and install Azure Pipelines in your Gi
 
 11. When prompted, on the **Setup your Azure Pipelines project** page, in the **Project name** textbox, type **Integrating External Source Control with Azure Pipelines**, leave the **Project visibility** set to **Private**, and click **Continue**.
 
-    ![01-02](../../Evidencias/mod06b/MOD06_LABb_EXER1_TASK_1_ 11.png)
+    ![01-02](../../Evidencias/mod06.b/MOD06_LABb_EXER1_TASK_1_ 11.png)
 
 12. On the **Azure Pipelines by Microsoft would like permission to** page, click **Authorize Azure Pipelines**.
 
@@ -114,7 +114,7 @@ In this task, you will configure the Azure Pipelines project based on the fork o
 
    > **Note**: The build pipeline is defined as **YAML**, a markup syntax well-suited to defining processes like this because it allows you to manage the configuration of the pipeline like any other file in the repo. It's a pretty simple template that identifies the pool to pull a VM from for building, the process to install Node.js for building, and the actual build itself. 
 
-   ![01-02](../../Evidencias/mod06b/MOD06_LABb_EXER1_TASK_02_ 04.png)
+   ![01-02](../../Evidencias/mod06.b/MOD06_LABb_EXER1_TASK_02_ 04.png)
 
 1. On the **Review your pipeline YAML**, click **Save and run** to save the pipeline and queue a new build.
 
@@ -126,9 +126,9 @@ In this task, you will configure the Azure Pipelines project based on the fork o
 
 1. On the **Summary** tab of the build job's pane, verify that the build completed successfully.
 
-   ![01-02](../../Evidencias/mod06b/MOD06_LABb_EXER1_TASK_02_ 07.png)
+   ![01-02](../../Evidencias/mod06.b/MOD06_LABb_EXER1_TASK_02_ 07.png)
 
-![01-02](../../Evidencias/mod06b/MOD06_LABb_EXER1_TASK_02_ 07b.png)
+![01-02](../../Evidencias/mod06.b/MOD06_LABb_EXER1_TASK_02_ 07b.png)
 
 ### Task 3: Modifying a YAML build pipeline definition
 
@@ -146,7 +146,7 @@ In this task, you will modify the YAML build definition in the forked GitHub rep
 
    > **Note**: Our project already contains tests written using Mocha so we just need to execute them in our pipeline. 
 
-   ![01-02](../../Evidencias/mod06b/MOD06_LABb_EXER1_TASK_03_ 03.png)
+   ![01-02](../../Evidencias/mod06.b/MOD06_LABb_EXER1_TASK_03_ 03.png)
 
 1.  To add the test run, add the `npm test` command directly below the `npm run build` command, with the same indentation. In addition, update the `displayName` entry to `'npm install, build, and test'` to clearly indicate what each task of the build is doing: 
 
@@ -159,13 +159,13 @@ In this task, you will modify the YAML build definition in the forked GitHub rep
 
    > **Note**: Again, it's acceptable to commit this change directly to the master branch considering that this is a lab environment.
 
-   ![01-02](../../Evidencias/mod06b/MOD06_LABb_EXER1_TASK_03_ 05.png)
+   ![01-02](../../Evidencias/mod06.b/MOD06_LABb_EXER1_TASK_03_ 05.png)
 
 1. Switch back to the browser tab displaying the **Azure DevOps** portal and use the breadcrumb navigation to navigate to the **Pipelines** pane of the **Pipelines** view.
 
 1. Verify that the new build triggered by the update already appears on the **Recent** tab in the **Recently run pipelines** list. Click the entry corresponding to the pipeline, on the **Runs** tab, select the most recent run, and, in the **Jobs** section, click the **Job** entry.
 
-   ![01-02](../../Evidencias/mod06b/MOD06_LABb_EXER1_TASK_03_ 07.png)
+   ![01-02](../../Evidencias/mod06.b/MOD06_LABb_EXER1_TASK_03_ 07.png)
 
 1.  On the pane displaying job details, click on individual tasks of the job and follow it through to completion.
 
@@ -189,7 +189,7 @@ In this task, you will propose an invalid change and review the results of a bui
 
 1. Scroll to the bottom of the page, replace the default commit message with **Modifying the add function**, select **Create a new branch**, set its name to **addition-cleanup**, and click **Propose file change**.
 
-   ![01-02](../../Evidencias/mod06b/MOD06_LABb_EXER1_TASK_04_ 05.png)
+   ![01-02](../../Evidencias/mod06.b/MOD06_LABb_EXER1_TASK_04_ 05.png)
 
 1. On the **Open a pull request** page, click **Create pull request** to initiate the process of getting your untested changes into production code. 
 
@@ -197,7 +197,7 @@ In this task, you will propose an invalid change and review the results of a bui
 
    > **Note**: Return to your original mindset of "project owner".
 
-   ![01-02](../../Evidencias/mod06b/MOD06_LABb_EXER1_TASK_04_ 06.png)
+   ![01-02](../../Evidencias/mod06.b/MOD06_LABb_EXER1_TASK_04_ 06.png)
 
 1. On the **Modifying the add function #1** pull request page, in the **All checks have failed** section, click **Details** to learn more.
 
@@ -211,7 +211,7 @@ In this task, you will propose an invalid change and review the results of a bui
 
    > **Note**: It might not be immediately clear why the tests failed, but all of the history we've accrued in the pipeline makes it easy to identify that something from this new pull request is the cause. The next step will be to figure out why "21 + 21" produced "2121" instead of the expected "42".
 
-   ![01-02](../../Evidencias/mod06b/MOD06_LABb_EXER1_TASK_04_ 11.png)
+   ![01-02](../../Evidencias/mod06.b/MOD06_LABb_EXER1_TASK_04_ 11.png)
 
 1.  Close the tab displaying the failed run of the job in the Azure DevOps portal.
 
@@ -225,23 +225,23 @@ In this task, you will correct the invalid changes introduced in the pull reques
 
 1. At the top of the pane containing the listing of the repo files, **Pull requests** and then click the entry representing the most recent pull request.
 
-   ![01-02](../../Evidencias/mod06b/MOD06_LABb_EXER1_TASK_05_ 02.png)
+   ![01-02](../../Evidencias/mod06.b/MOD06_LABb_EXER1_TASK_05_ 02.png)
 
 1. On the **Modifying the add function #1** GitHub page, click the **File changed** tab and review its content.
 
    > **Note**: It appears that the changes were made by someone who didn't realize that the plus signs before each variable were necessary to coerce those variables to their number representations. By removing them, JavaScript interpreted the middle plus sign as the string concatenation operator, which explains why 21 + 21 = 2121 in the failed test. 
 
-   ![01-02](../../Evidencias/mod06b/MOD06_LABb_EXER1_TASK_05_ 03.png)
+   ![01-02](../../Evidencias/mod06.b/MOD06_LABb_EXER1_TASK_05_ 03.png)
 
 1. On the **Modifying the add function #1** GitHub page, click the ellipsis symbol directly under the **Review changes** button and, in the drop-down menu, click **Edit file**. 
 
-   ![01-02](../../Evidencias/mod06b/MOD06_LABb_EXER1_TASK_05_ 04.png)
+   ![01-02](../../Evidencias/mod06.b/MOD06_LABb_EXER1_TASK_05_ 04.png)
 
 1. Revert the original changes by adding the plus signs in front of the **a** and **b** variables, resulting in 'add':      function(a,b) { return +a + +b },`. In addition, include a comment on the preceding line stating `// Using + operator to type cast variables as integers in order to prevent string concatenation`.
 
 1. Scroll to the bottom of the page, replace the default commit message with **Fixing the add function**, ensure that the option to **Commit directly to the addition-cleanup branch** is selected, and click **Commit changes**.
 
-   ![01-02](../../Evidencias/mod06b/MOD06_LABb_EXER1_TASK_05_ 06.png)
+   ![01-02](../../Evidencias/mod06.b/MOD06_LABb_EXER1_TASK_05_ 06.png)
 
 1.  On the **Modifying the add function #1** GitHub page, select the **Conversation** tab.
 
@@ -249,9 +249,9 @@ In this task, you will correct the invalid changes introduced in the pull reques
 
 1. Once all checks have passed, click **Merge pull request** and then click **Confirm merge**.
 
-   ![01-02](../../Evidencias/mod06b/MOD06_LABb_EXER1_TASK_05_ 08.png)
+   ![01-02](../../Evidencias/mod06.b/MOD06_LABb_EXER1_TASK_05_ 08.png)
 
-![01-02](../../Evidencias/mod06b/MOD06_LABb_EXER1_TASK_05_ 08b.png)
+![01-02](../../Evidencias/mod06.b/MOD06_LABb_EXER1_TASK_05_ 08b.png)
 
 ### Task 6: Adding a build status badge
 
