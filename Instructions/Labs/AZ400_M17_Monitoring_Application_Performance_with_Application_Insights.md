@@ -137,26 +137,38 @@ In this task, you will deploying a web app to Azure by using Azure DevOps pipeli
 
 > **Note**: The sample project we are using in this lab includes a continuous integration build, which we will use without modifications. There is also a continuous delivery release pipeline that will require minor changes before it is ready for deployment to the Azure resources you implemented in the previous task. 
 
-1.  Switch to the web browser window displaying the **Monitoring Application Performance** project in the Azure DevOps portal, in the vertical navigational pane, select the **Pipelines**, and, in the **Pipelines** section, select **Releases**.
-1.  In the list of release pipelines, on the **PartsUnlimitedE2E** pane, click **Edit**. 
-1.  On the **All pipelines > PartsUnlimitedE2E** pane, click the rectangle representing the **Dev** stage, on the **Dev** pane, click **Delete**, and, in the **Delete stage** dialog box, click **Confirm**.
-1.  Back on the **All pipelines > PartsUnlimitedE2E** pane, click the rectangle representing the **QA** stage, on the **QA** pane, click **Delete**, and, in the **Delete stage** dialog box, click **Confirm**.
-1.  Back on the **All pipelines > PartsUnlimitedE2E** pane, in the rectangle representing the **Production** stage, click the **1 job, 1 task** link.
-1.  On the pane displaying the list of tasks of the **Production*** stage, click the entry representing the **Azure App Service Deploy** task.
-1.  On the **Azure App Service deploy** pane, in the **Azure subscription** dropdown list, select the entry representing the Azure subscription you are using in this lab, and click **Authorize** to create the corresponding service connection. When prompted, sign in using the account with the Owner role in the Azure subscription and the Global Administrator role in the Azure AD tenant associated with the Azure subscription.
-1.  With the **Tasks** tab of the **All pipelines > PartsUnlimitedE2E** pane active, click the **Pipeline** tab header to return to the diagram of the pipeline. 
-1.  In the diagram, click the **Pre-deployment condition** oval symbol on the left side of the rectangle representing the **Production** stage.
+1. Switch to the web browser window displaying the **Monitoring Application Performance** project in the Azure DevOps portal, in the vertical navigational pane, select the **Pipelines**, and, in the **Pipelines** section, select **Releases**.
+
+1. In the list of release pipelines, on the **PartsUnlimitedE2E** pane, click **Edit**. 
+
+1. On the **All pipelines > PartsUnlimitedE2E** pane, click the rectangle representing the **Dev** stage, on the **Dev** pane, click **Delete**, and, in the **Delete stage** dialog box, click **Confirm**.
+
+1. Back on the **All pipelines > PartsUnlimitedE2E** pane, click the rectangle representing the **QA** stage, on the **QA** pane, click **Delete**, and, in the **Delete stage** dialog box, click **Confirm**.
+
+1. Back on the **All pipelines > PartsUnlimitedE2E** pane, in the rectangle representing the **Production** stage, click the **1 job, 1 task** link.
+
+1. On the pane displaying the list of tasks of the **Production*** stage, click the entry representing the **Azure App Service Deploy** task.
+
+1. On the **Azure App Service deploy** pane, in the **Azure subscription** dropdown list, select the entry representing the Azure subscription you are using in this lab, and click **Authorize** to create the corresponding service connection. When prompted, sign in using the account with the Owner role in the Azure subscription and the Global Administrator role in the Azure AD tenant associated with the Azure subscription.
+
+1. With the **Tasks** tab of the **All pipelines > PartsUnlimitedE2E** pane active, click the **Pipeline** tab header to return to the diagram of the pipeline. 
+
+1. In the diagram, click the **Pre-deployment condition** oval symbol on the left side of the rectangle representing the **Production** stage.
+
 1.  On the **Pre-deployment condition** pane, in the **Select trigger** section, select **After release**.
 
     > **Note**: This will invoke the release pipeline after the project's build pipeline succeeds.
 
-1.  With the **Pipeline** tab of the **All pipelines > PartsUnlimitedE2E** pane active, click the **Variables** tab header.
-1.  In the list of variables, set the value of the **WebsiteName** variable to match the name of the Azure App Service web app you created earlier in this lab.
+1. With the **Pipeline** tab of the **All pipelines > PartsUnlimitedE2E** pane active, click the **Variables** tab header.
+
+1. In the list of variables, set the value of the **WebsiteName** variable to match the name of the Azure App Service web app you created earlier in this lab.
+
 1.  In the upper right corner of the pane, click **Save**, and, when prompted, in the **Save** dialog box, click **OK** again.
 
     > **Note**: Now that the release pipeline is in place, we can expect that any commits to the master branch will trigger the build and release pipelines.
 
-1.  In the web browser window displaying the Azure DevOps portal, in the vertical navigational pane, click **Repos**. 
+1. In the web browser window displaying the Azure DevOps portal, in the vertical navigational pane, click **Repos**. 
+
 1.  On the **Files** pane, navigate to and select the **PartsUnlimited-aspnet45/src/PartsUnlimitedWebsite/Web.config** file.
 
     > **Note**: This application already has configuration settings for the Application Insights key and for a SQL connection. 
@@ -181,28 +193,39 @@ In this task, you will deploying a web app to Azure by using Azure DevOps pipeli
 
     > **Note**: A new build will begin and ultimately result in a deployment to Azure. Do not wait for its completion, but instead proceed to the next step.
 
-1.  Switch to the web browser displaying the Azure portal and navigate to the App Service web app you provisioned earlier in the lab. 
-1.  On the App Service web app blade, click in the vertical menu on the left side, in the **Settings** section, click **Configuration** tab.
-1.  In the list of **Application settings**, click the **APPINSIGHTS_INSTRUMENTATIONKEY** entry. 
-1.  On the **Add/Edit application setting** blade, copy the text in the **Value** textbox and click **Cancel**.
+1. Switch to the web browser displaying the Azure portal and navigate to the App Service web app you provisioned earlier in the lab. 
 
-    > **Note**: This is the default setting added during the App Service web app deployment, which already contains the Application Insights ID. We need to add a new setting expected by our app, with a different name but the matching value. This is a specific requirement for our sample.
+1. On the App Service web app blade, click in the vertical menu on the left side, in the **Settings** section, click **Configuration** tab.
 
-1.  In the **Application settings** section, click **+ New application setting**.
+1. In the list of **Application settings**, click the **APPINSIGHTS_INSTRUMENTATIONKEY** entry. 
+
+1. On the **Add/Edit application setting** blade, copy the text in the **Value** textbox and click **Cancel**.
+
+     > **Note**: This is the default setting added during the App Service web app deployment, which already contains the Application Insights ID. We need to add a new setting expected by our app, with a different name but the matching value. This is a specific requirement for our sample.
+
+     5d4e8690-b990-43f5-bb45-be73429614c7
+
+1. In the **Application settings** section, click **+ New application setting**.
+
 1.  On the **Add/Edit application setting** blade, in the **Name** textbox, type **Keys:ApplicationInsights:InstrumentationKey**, in the **Value** textbox, type the string of characters you copied into Clipboard and click **OK**.
 
     > **Note**: As with the **Application Insights** key, we also need to configure the Azure SQL Database connection string expected by our application.
 
-1.  On the App Service web app **Configuration** blade, scroll down to the **Connection string** section and click **defaultConnection**.
+1. On the App Service web app **Configuration** blade, scroll down to the **Connection string** section and click **defaultConnection**.
+
 1.  On the **Add/Edit connection string** blade, in the **Name** textbox, replace **defaultConnection** with **DefaultConnectionString**, click **OK**, click **Save** to save the configuration settings, and, when prompted for confirmation, click **Continue**.
 
     > **Note**: Changes to the application settings and connection strings trigger restart of the web app.
 
-1.  Switch back to the web browser window displaying the Azure DevOps portal, in the vertical navigational pane, select the **Pipelines**, and, in the **Pipelines** section, click the entry representing your most recently run build pipeline.
-1.  If the build has not yet completed, track it through until it does, then, in the vertical navigational pane, in the **Pipelines** section, click **Releases**, on the **PartsUnlimiteE2E** pane, click **Release-1** and follow the release pipeline to its completion.
-1.  Switch to the web browser window displaying the Azure portal and, on the **App Service web app** blade, in the vertical menu bar on the left side, click **Overview**. 
-1.  On the right side, in the **Essentials** section, click the **URL** link. This will automatically open another web browser tab displaying the **Parts Unlimited** 
-web site.
+1. Switch back to the web browser window displaying the Azure DevOps portal, in the vertical navigational pane, select the **Pipelines**, and, in the **Pipelines** section, click the entry representing your most recently run build pipeline.
+
+1. If the build has not yet completed, track it through until it does, then, in the vertical navigational pane, in the **Pipelines** section, click **Releases**, on the **PartsUnlimiteE2E** pane, click **Release-1** and follow the release pipeline to its completion.
+
+1. Switch to the web browser window displaying the Azure portal and, on the **App Service web app** blade, in the vertical menu bar on the left side, click **Overview**. 
+
+1. On the right side, in the **Essentials** section, click the **URL** link. This will automatically open another web browser tab displaying the **Parts Unlimited** 
+     web site.
+
 1.  Verify that the **Parts Unlimited** web site loads as expected. 
 
 #### Task 2: Generate and review application traffic
