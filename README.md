@@ -12,7 +12,7 @@ Lab 03: Sharing Team Knowledge using Azure Project Wikis
 
 [Lab 06a](./Instructions/Labs/AZ400_M06_Enabling_Continuous_Integration_with_Azure_Pipelines.md) : Enabling Continuous Integration with Azure Pipelines
 
-[Lab 06b](./Instructions/Labs/AZ400_M06_Integrating_External_Source_Control_with_Azure_Pipelines.md)   Integrating External Source Control with Azure Pipelines (fichero .md no muestra imagenes enlazadas en Evidencias/mod6b/)
+[Lab 06B](./Instructions/Labs/AZ400_M06B_Integrating_External_Source_Control_with_Azure_Pipelines.md)   Integrating External Source Control with Azure Pipelines 
 
 [Lab 07](./Instructions/Labs/AZ400_M07_Integrating_Azure_Key_Vault_with_Azure_DevOps.md) : Integrating Azure Key Vault with Azure DevOps
 
