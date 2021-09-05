@@ -8,7 +8,7 @@ lab:
 # Student lab manual
 
 
-![01-02](../../../blob/Evidencias/mod06b/MOD06_LABb_EXER1_TASK_1_ 11.png)
+![01-02](../../../main/Evidencias/mod06b/MOD06_LABb_EXER1_TASK_1_ 11.png)
 ## Lab overview.
 
 With the introduction of Azure DevOps, Microsoft is offering developers a new continuous integration/continuous delivery (CI/CD) service called Azure Pipelines that enables you to continuously build, test, and deploy to any platform or cloud. It has cloud-hosted agents for Linux, macOS, and Windows; powerful workflows with native container support; and flexible deployments to Kubernetes, VMs, and serverless environments.
