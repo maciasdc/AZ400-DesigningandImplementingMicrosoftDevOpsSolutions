@@ -8,7 +8,7 @@ lab:
 # Student lab manual
 
 
-https://github.com/maciasdc/CFTIC-AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/main/Evidencias/mod06b/MOD06_LABb_EXER1_TASK_1_%2011.png
+![01-02](maciasdc/CFTIC-AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/main/Evidencias/mod06b/MOD06_LABb_EXER1_TASK_1_ 11.png)
 
 ## Lab overview.
 
