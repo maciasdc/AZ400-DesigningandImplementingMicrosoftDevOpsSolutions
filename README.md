@@ -4,7 +4,7 @@
 
 [Lab 02](./Instructions/Labs/AZ400_M02_Version_Controlling_with_Git_in_Azure_Repos.md) : Version Controlling with Git in Azure Repos
 
-Lab 03: Sharing Team Knowledge using Azure Project Wikis
+[Lab 03](./Instructions/Labs/AZ400_M03_Sharing_Team_Knowledge_using_Azure_Project_Wikis.md): Sharing Team Knowledge using Azure Project Wikis
 
 [Lab 04](./Instructions/Labs/AZ400_M04_Version_Controlling_with_Git_in_Azure_Repos.md)  Version Controlling with Git in Azure Repos
 
@@ -35,4 +35,16 @@ Lab 10a: Controlling Deployments using Release Gates
 [Lab 14a](./Instructions/Labs/AZ400_M14_Ansible_with_Azure.md)  Ansible with Azure
 
 [Lab 14b](./Instructions/Labs/AZ400_M14_Automating_infrastructure_deployments_in_the_Cloud_with_Terraform.md)  Automating infrastructure deployments in the Cloud with Terraform and Azure Pipelines
+
+[Lab 15](./Instructions/Labs/AZ400_M15_Deploying_Docker_containers_to_Azure_App_Service_web_apps.md.md)   Deploying Docker containers to Azure App Service web apps
+
+[Lab 16](./Instructions/Labs/AZ400_M16_Deploying_multi-container_application_to_Azure_Kubernetes_Services.md)   Deploying a multi-container application to Azure Kubernetes Services
+
+[Lab 17](./Instructions/Labs/AZ400_M17_Monitoring_Application_Performance_with_Application_Insights.md) : Monitoring Application Performance with Application Insights
+
+[Lab 18](./Instructions/Labs/AZ400_M18_Integration_between_Azure_DevOps_and_Teams.md) : Integration between Azure DevOps and Teams
+
+[Lab 19](./Instructions/Labs/AZ400_M19_Implement_Security_and_Compliance_in_an_Azure_DevOps_pipeline.md) :  Implement Security and Compliance in an Azure DevOps pipeline
+
+[Lab 20](./Instructions/Labs/AZ400_M20_Managing_technical_debt_with_SonarQube_and_Azure_DevOps.md)  Managing technical debt with SonarCloud and Azure DevOps
 

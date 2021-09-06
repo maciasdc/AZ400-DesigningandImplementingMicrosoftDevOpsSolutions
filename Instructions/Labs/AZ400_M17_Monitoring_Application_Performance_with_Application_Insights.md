@@ -65,15 +65,21 @@ In this task, you will use Azure DevOps Demo Generator to generate a new project
 
     > **Note**: For more information on the site, see https://docs.microsoft.com/en-us/azure/devops/demo-gen.
 
-1.  Click **Sign in** and sign in using the Microsoft account associated with your Azure DevOps subscription.
-1.  If required, on the **Azure DevOps Demo Generator** page, click **Accept** to accept the permission requests for accessing your Azure DevOps subscription.
-1.  On the **Create New Project** page, in the **New Project Name** textbox, type **Monitoring Application Performance**, in the **Select organization** dropdown list, select your Azure DevOps organization, and then click **Choose template**.
-1.  In the list of templates, select the **PartsUnlimited** template and click **Select Template**.
-1.  Back on the **Create New Project** page, click **Create Project**
+1. Click **Sign in** and sign in using the Microsoft account associated with your Azure DevOps subscription.
 
-    > **Note**: Wait for the process to complete. This should take about 2 minutes. In case the process fails, navigate to your DevOps organization, delete the project, and try again.
+1. If required, on the **Azure DevOps Demo Generator** page, click **Accept** to accept the permission requests for accessing your Azure DevOps subscription.
 
-1.  On the **Create New Project** page, click **Navigate to project**.
+1. On the **Create New Project** page, in the **New Project Name** textbox, type **Monitoring Application Performance**, in the **Select organization** dropdown list, select your Azure DevOps organization, and then click **Choose template**.
+
+1. In the list of templates, select the **PartsUnlimited** template and click **Select Template**.
+
+1. Back on the **Create New Project** page, click **Create Project**
+
+   > **Note**: Wait for the process to complete. This should take about 2 minutes. In case the process fails, navigate to your DevOps organization, delete the project, and try again.
+
+   ![01-02](../../Evidencias/mod17/MOD17_LAB_EXER0_TASK_01_06.png)
+
+1. On the **Create New Project** page, click **Navigate to project**.
 
 #### Task 2: Create Azure resources
 
@@ -127,6 +133,8 @@ In this task, you will create an Azure web app and an Azure SQL database by usin
 
     > **Note**: Wait for the process to complete. This should take about 2 minutes. 
 
+![01-02](../../Evidencias/mod17/MOD17_LAB_EXER0_TASK_02_15.png)
+
 ### Exercise 1: Monitor an Azure App Service web app by using Azure Application Insights
 
 In this exercise, you will deploy a web app to Azure App Service by using Azure DevOps pipelines, generate traffic targeting the web app, and use Application Insights to review the web traffic, investigate application performance, track application usage, and configure alerting.
@@ -139,15 +147,23 @@ In this task, you will deploying a web app to Azure by using Azure DevOps pipeli
 
 1. Switch to the web browser window displaying the **Monitoring Application Performance** project in the Azure DevOps portal, in the vertical navigational pane, select the **Pipelines**, and, in the **Pipelines** section, select **Releases**.
 
+     ![01-02](../../Evidencias/mod17/MOD17_LAB_EXER1_TASK_01_01.png)
+
 1. In the list of release pipelines, on the **PartsUnlimitedE2E** pane, click **Edit**. 
 
 1. On the **All pipelines > PartsUnlimitedE2E** pane, click the rectangle representing the **Dev** stage, on the **Dev** pane, click **Delete**, and, in the **Delete stage** dialog box, click **Confirm**.
 
 1. Back on the **All pipelines > PartsUnlimitedE2E** pane, click the rectangle representing the **QA** stage, on the **QA** pane, click **Delete**, and, in the **Delete stage** dialog box, click **Confirm**.
 
+     ![01-02](../../Evidencias/mod17/MOD17_LAB_EXER1_TASK_01_04.png)
+
 1. Back on the **All pipelines > PartsUnlimitedE2E** pane, in the rectangle representing the **Production** stage, click the **1 job, 1 task** link.
 
+     ![01-02](../../Evidencias/mod17/MOD17_LAB_EXER1_TASK_01_05.png)
+
 1. On the pane displaying the list of tasks of the **Production*** stage, click the entry representing the **Azure App Service Deploy** task.
+
+     ![01-02](../../Evidencias/mod17/MOD17_LAB_EXER1_TASK_01_06.png)
 
 1. On the **Azure App Service deploy** pane, in the **Azure subscription** dropdown list, select the entry representing the Azure subscription you are using in this lab, and click **Authorize** to create the corresponding service connection. When prompted, sign in using the account with the Owner role in the Azure subscription and the Global Administrator role in the Azure AD tenant associated with the Azure subscription.
 
@@ -155,13 +171,19 @@ In this task, you will deploying a web app to Azure by using Azure DevOps pipeli
 
 1. In the diagram, click the **Pre-deployment condition** oval symbol on the left side of the rectangle representing the **Production** stage.
 
-1.  On the **Pre-deployment condition** pane, in the **Select trigger** section, select **After release**.
+1. On the **Pre-deployment condition** pane, in the **Select trigger** section, select **After release**.
 
-    > **Note**: This will invoke the release pipeline after the project's build pipeline succeeds.
+     > **Note**: This will invoke the release pipeline after the project's build pipeline succeeds.
+
+     ![01-02](../../Evidencias/mod17/MOD17_LAB_EXER1_TASK_01_10.png)
+
+     ![01-02](../../Evidencias/mod17/MOD17_LAB_EXER1_TASK_01_10b.png)
 
 1. With the **Pipeline** tab of the **All pipelines > PartsUnlimitedE2E** pane active, click the **Variables** tab header.
 
 1. In the list of variables, set the value of the **WebsiteName** variable to match the name of the Azure App Service web app you created earlier in this lab.
+
+      ![01-02](../../Evidencias/mod17/MOD17_LAB_EXER1_TASK_01_12.png)
 
 1.  In the upper right corner of the pane, click **Save**, and, when prompted, in the **Save** dialog box, click **OK** again.
 
@@ -169,9 +191,11 @@ In this task, you will deploying a web app to Azure by using Azure DevOps pipeli
 
 1. In the web browser window displaying the Azure DevOps portal, in the vertical navigational pane, click **Repos**. 
 
-1.  On the **Files** pane, navigate to and select the **PartsUnlimited-aspnet45/src/PartsUnlimitedWebsite/Web.config** file.
+1. On the **Files** pane, navigate to and select the **PartsUnlimited-aspnet45/src/PartsUnlimitedWebsite/Web.config** file.
 
-    > **Note**: This application already has configuration settings for the Application Insights key and for a SQL connection. 
+      > **Note**: This application already has configuration settings for the Application Insights key and for a SQL connection. 
+
+      ![01-02](../../Evidencias/mod17/MOD17_LAB_EXER1_TASK_01_15.png)
 
 1. On the **Web.config** pane, review the lines referencing the Application Insights key and for a SQL connection:
 
@@ -198,6 +222,8 @@ In this task, you will deploying a web app to Azure by using Azure DevOps pipeli
 1. On the App Service web app blade, click in the vertical menu on the left side, in the **Settings** section, click **Configuration** tab.
 
 1. In the list of **Application settings**, click the **APPINSIGHTS_INSTRUMENTATIONKEY** entry. 
+
+      ![01-02](../../Evidencias/mod17/MOD17_LAB_EXER1_TASK_01_20.png)
 
 1. On the **Add/Edit application setting** blade, copy the text in the **Value** textbox and click **Cancel**.
 
