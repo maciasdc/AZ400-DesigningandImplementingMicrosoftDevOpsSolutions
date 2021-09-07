@@ -36,7 +36,7 @@ Lab 10a: Controlling Deployments using Release Gates
 
 [Lab 14b](./Instructions/Labs/AZ400_M14_Automating_infrastructure_deployments_in_the_Cloud_with_Terraform.md)  Automating infrastructure deployments in the Cloud with Terraform and Azure Pipelines
 
-[Lab 15](./Instructions/Labs/AZ400_M15_Deploying_Docker_containers_to_Azure_App_Service_web_apps.md.md)   Deploying Docker containers to Azure App Service web apps
+[Lab 15](./Instructions/Labs/AZ400_M15_Deploying_Docker_containers_to_Azure_App_Service_web_apps.md)   Deploying Docker containers to Azure App Service web apps
 
 [Lab 16](./Instructions/Labs/AZ400_M16_Deploying_multi-container_application_to_Azure_Kubernetes_Services.md)   Deploying a multi-container application to Azure Kubernetes Services
 

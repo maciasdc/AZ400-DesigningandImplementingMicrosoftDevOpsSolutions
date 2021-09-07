@@ -68,7 +68,7 @@ In this task, you will use Azure DevOps Demo Generator to generate a new project
 
 1. If required, on the **Azure DevOps Demo Generator** page, click **Accept** to accept the permission requests for accessing your Azure DevOps subscription.
 
-1. ![01-02](../../Evidencias/mod11b/MOD11_LABb_EXER0_TASK_1_ 3.png)
+1. ![01-02](../../Evidencias/mod11b/MOD11_LABb_EXER0_TASK_1_3.png)
 
 1. On the **Create New Project** page, in the **New Project Name** textbox, type **Setting Up and Running Functional Tests**, in the **Select organization** dropdown list, select your Azure DevOps organization, and then click **Choose template**.
 

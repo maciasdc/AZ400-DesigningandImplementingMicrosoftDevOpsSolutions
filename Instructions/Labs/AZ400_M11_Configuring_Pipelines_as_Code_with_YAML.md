@@ -63,7 +63,7 @@ In this task, you will use Azure DevOps Demo Generator to generate a new project
 
 1. If required, on the **Azure DevOps Demo Generator** page, click **Accept** to accept the permission requests for accessing your Azure DevOps subscription.
 
-   ![01-02](../../Evidencias/mod11a/MOD10_LABb_EXER0_TASK_1_ 3.png)
+   ![01-02](../../Evidencias/mod11a/MOD10_LABb_EXER0_TASK_1_3.png)
 
 1. On the **Create New Project** page, in the **New Project Name** textbox, type **Configuring Pipelines as Code with YAML**, in the **Select organization** dropdown list, select your Azure DevOps organization, and then click **Choose template**.
 
@@ -87,7 +87,7 @@ In this task, you will create an Azure web app and an Azure SQL database by usin
 
 1. On the **Web App + SQL**, click **Create**.
 
-1. ![01-02](../../Evidencias/mod11a/MOD10_LABb_EXER0_TASK_2_ 4.png)
+1. ![01-02](../../Evidencias/mod11a/MOD10_LABb_EXER0_TASK_2_4.png)
 
 1.  On the **Web App + SQL** blade, specify the following settings:
 
@@ -99,7 +99,7 @@ In this task, you will create an Azure web app and an Azure SQL database by usin
 
 1. Click **App Service plan/Location**, on the **App Service plan** blade, click **+ Create new**.
 
-1. ![01-02](../../Evidencias/mod11a/MOD10_LABb_EXER0_TASK_2_ 7.png)
+1. ![01-02](../../Evidencias/mod11a/MOD10_LABb_EXER0_TASK_2_7.png)
 
 1.  On the **New App Service Plan** blade, specify the following settings and click **OK**:
 
@@ -113,7 +113,7 @@ In this task, you will create an Azure web app and an Azure SQL database by usin
 
 1. On the **SQL Database** blade, in the **Name** textbox, type **partsunlimited**.
 
-1. ![01-02](../../Evidencias/mod11a/MOD10_LABb_EXER0_TASK_2_ 11.png)
+1. ![01-02](../../Evidencias/mod11a/MOD10_LABb_EXER0_TASK_2_11.png)
 
 1. On the **SQL Database** blade, click **Target server**.
 
@@ -151,11 +151,11 @@ In this task, you will delete the existing pipeline.
 
 1. Write **PartsUnlimited** and click **Delete**.
 
-   ![01-02](../../Evidencias/mod11a/MOD10_LABb_EXER1_TASK_1_ 4.png)
+   ![01-02](../../Evidencias/mod11a/MOD10_LABb_EXER1_TASK_1_4.png)
 
 1. In the vertical navigational pane, select the **Repos > Files**. Make sure you are in the **master** branch (dropdown on top of **Files** window), on the **azure-pipelines.yml** file, click the vertical ellipsis symbol and, in the drop-down menu, select **Delete**. Commit the change on the master branch by clicking on **Commit** (leaving default options).
 
-1.  ![01-02](../../Evidencias/mod11a/MOD10_LABb_EXER1_TASK_1_ 5.png)
+1.  ![01-02](../../Evidencias/mod11a/MOD10_LABb_EXER1_TASK_1_5.png)
 
 #### Task 2: Add a YAML build definition
 
@@ -175,7 +175,7 @@ In this task, you will add a YAML build definition to the existing project.
 
    > **Note**: The pipeline definition will be saved as a file named **azure-pipelines.yml** in the root of the repository. The file will contain the steps required to build and test a typical ASP<nolink>.NET solution. You can also customize the build as needed. In this scenario, you will update the **pool** to enforce the use of a VM running Visual Studio 2017.
 
-   ![01-02](../../Evidencias/mod11a/MOD10_LABb_EXER1_TASK_2_ 5.png)
+   ![01-02](../../Evidencias/mod11a/MOD10_LABb_EXER1_TASK_2_5.png)
 
 6. Make sure  `trigger` is **master**.
 
@@ -185,7 +185,7 @@ In this task, you will add a YAML build definition to the existing project.
 
 8. On the **Review your pipeline YAML** pane, click **Save and run**.
 
-9. ![01-02](../../Evidencias/mod11a/MOD10_LABb_EXER1_TASK_2_ 8.png)
+9. ![01-02](../../Evidencias/mod11a/MOD10_LABb_EXER1_TASK_2_8.png)
 
 10. On the **Save and run** pane, accept the default settings and click **Save and run**.
 
