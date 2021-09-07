@@ -6,11 +6,11 @@
 
 [Lab 03](./Instructions/Labs/AZ400_M03_Sharing_Team_Knowledge_using_Azure_Project_Wikis.md): Sharing Team Knowledge using Azure Project Wikis
 
-[Lab 04](./Instructions/Labs/AZ400_M04_Version_Controlling_with_Git_in_Azure_Repos.md)  Version Controlling with Git in Azure Repos
+[Lab 04](./Instructions/Labs/AZ400_M04_Version_Controlling_with_Git_in_Azure_Repos.md) : Version Controlling with Git in Azure Repos
 
-[Lab 05](./Instructions/Labs/AZ400_M05_Configuring_Agent_Pools_and_Understanding_Pipeline_Styles.md) : Configuring Agent Pools and Understanding Pipeline Styles
+[Lab 05](./Instructions/Labs/AZ400_M05_Configuring_Agent_Pools_and_Understanding_Pipeline_Styles.md)  Configuring Agent Pools and Understanding Pipeline Styles
 
-[Lab 06a](./Instructions/Labs/AZ400_M06_Enabling_Continuous_Integration_with_Azure_Pipelines.md) : Enabling Continuous Integration with Azure Pipelines
+[Lab 06a](./Instructions/Labs/AZ400_M06_Enabling_Continuous_Integration_with_Azure_Pipelines.md)  Enabling Continuous Integration with Azure Pipelines
 
 [Lab 06b](./Instructions/Labs/AZ400_M06_Integrating_External_Source_Control_with_Azure_Pipelines.md)   Integrating External Source Control with Azure Pipelines 
 
